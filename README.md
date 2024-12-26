@@ -65,3 +65,29 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 ### Despliegue (Opcional)
 
 - [x] Desplegar la aplicación en Cloudflare Pages, Vercel o Netlify.
+
+## ¿Qué se espera de ti en esta prueba?
+
+### Dominio de las tecnologías
+
+- Next.js (Frontend) / React.js (Frontend)
+- TypeScript
+- Manejo de APIs REST
+
+### Habilidades de documentación
+
+- Redacción clara y concisa de la documentación del proyecto
+- Estructura lógica del código y la arquitectura
+- Diagramado del planteamiento de la solución
+
+### Enfoque en la mejora continua:
+
+- Identificar oportunidades de mejora en el rendimiento
+- Proponer soluciones efectivas para la escalabilidad
+- Documentar decisiones técnicas y su justificación
+
+## Recursos
+
+- Documentación oficial de Next.js
+- GraphQL API: `https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co&explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4TADpIAR4AKAhgOYJ474F6JgCWxluNNAzvSggKoBOANi1Z4UnfhSrCayUv3psAFkKlJiogG4JlNAL7aCYBGyi96AB1EQk2vdVs6QAGhDrip4gCNxbDFmy9cBx0gA&_gl=1*1k0007i*_gcl_au*ODQ5MTE4MTg1LjE3MzQ5OTg5NTI`
+- Link diseño como referencia: [hidden information]
