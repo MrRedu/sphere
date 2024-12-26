@@ -64,4 +64,4 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 ### Despliegue (Opcional)
 
-- [ ] Desplegar la aplicación en Cloudflare Pages, Vercel o Netlify.
+- [x] Desplegar la aplicación en Cloudflare Pages, Vercel o Netlify.
