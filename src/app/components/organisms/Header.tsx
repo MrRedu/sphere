@@ -10,26 +10,14 @@ export const Header = () => {
       </h1>
       <Link href="/">
         <Image
-          src="/logo-mark.svg"
-          alt="Logo mark Sphere"
-          className="h-10 w-10"
+          src="/logotype.svg"
+          alt="Logotype Sphere"
+          className="h-8 w-full"
           width={100}
           height={100}
         />
       </Link>
-      <nav>
-        <ul className="flex gap-4">
-          <li>
-            <a href="#">Popular</a>
-          </li>
-          <li>
-            <a href="#">About</a>
-          </li>
-          <li>
-            <a href="#">Contact</a>
-          </li>
-        </ul>
-      </nav>
+
       <UserCircle size={40} />
     </header>
   )
