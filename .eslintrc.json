@@ -51,7 +51,7 @@
       }
     },
     {
-      "files": ["./src/app/hooks/**/*.ts"],
+      "files": ["./src/app/services/**/*.ts"],
       "rules": {
         "unicorn/filename-case": ["error", { "case": "kebabCase" }]
       }

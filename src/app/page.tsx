@@ -1,7 +1,11 @@
+import { HeroSection } from '@/components/organisms/ HeroSection'
+import { MultipleCards } from '@/components/organisms/MultipleCards'
+
 export default function HomePage() {
   return (
-    <div>
-      <h1 className="text-3xl font-bold underline">Hello World!</h1>
-    </div>
+    <>
+      <HeroSection />
+      <MultipleCards />
+    </>
   )
 }
