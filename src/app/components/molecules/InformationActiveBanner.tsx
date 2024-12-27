@@ -34,7 +34,7 @@ export const InformationActiveBanner = ({
         <h2
           className={`mv:text-2xl lg:text-4xlb line-clamp-2 text-xl font-medium uppercase text-light md:text-[1.9rem]`}
         >
-          {title}
+          {title || 'Unknown'}
         </h2>
 
         <ul className="flex gap-4 text-xs lg:gap-6 lg:text-sm">

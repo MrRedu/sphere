@@ -14,13 +14,13 @@ import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 import { SkeletonCarousel } from '@/components/atoms/skeletons/SkeletonCarousel'
 import useWindowSize from '@/hooks/useWindowSize'
 
-import { Anime } from '../../types/anime.type'
+import { SimpleAnime } from '../../types/anime.type'
 
 export const Swiper = ({
   animes,
   setCurrentIndex,
 }: {
-  animes: Anime[]
+  animes: SimpleAnime[]
   setCurrentIndex: (index: number) => void
 }) => {
   const [swiperReady, setSwiperReady] = useState(false)
@@ -74,7 +74,7 @@ export const Swiper = ({
                   src={
                     anime.coverImage?.large ||
                     anime.coverImage?.medium ||
-                    'https://via.placeholder.com/300x450'
+                    '/placeholder_300x450.jpg'
                   }
                   alt={`poster_path ${anime.title?.english || anime.title?.native || 'Unknown'}`}
                   width={300}
