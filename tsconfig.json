@@ -27,9 +27,10 @@
       "@/stores/*": ["./src/app/stores/*"],
       "@/types/*": ["./src/app/types/*"],
       "@/services/*": ["./src/app/services/*"],
-      "@/styles/*": ["./src/app/styles/*"]
+      "@/styles/*": ["./src/app/styles/*"],
+      "@/lib/*": ["./src/app/lib/*"]
     }
   },
   "include": ["next-env.d.ts", "**/*.ts", "**/*.tsx", ".next/types/**/*.ts"],
-  "exclude": ["node_modules"]
+  "exclude": ["node_modules", ".next"]
 }

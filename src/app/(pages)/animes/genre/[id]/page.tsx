@@ -1,7 +1,7 @@
 export default function AnimesByGenrePage() {
   return (
     <>
-      <h2>{`</AnimesByGenrePage>`}</h2>
+      <h2>{`</Page>`}</h2>
     </>
   )
 }

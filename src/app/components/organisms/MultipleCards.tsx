@@ -52,7 +52,7 @@ export const MultipleCards = () => {
         {animes?.map(anime => (
           <Link
             key={anime.id}
-            href={`/anime/${anime.id}/${anime.title.english?.replace(/[^a-zA-Z0-9]/g, '')}`}
+            href={`/anime/${anime.id}/${anime.title.english || anime.title.native}`}
             className="relative flex h-[220px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-sm p-4 transition-colors duration-500 ease-in-out hover:bg-dark/50"
           >
             <Image
