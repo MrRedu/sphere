@@ -104,7 +104,7 @@ export default function AnimePage({ params }: { params: Params }) {
   if (error) return <p>Error: {error.message}</p>
 
   const anime = data?.Media as Anime
-  const episodeInformation = [
+  const episodesInformation = [
     {
       id: 1,
       field: 'Episodes',
@@ -245,7 +245,7 @@ export default function AnimePage({ params }: { params: Params }) {
             ))}
           </div>
 
-          <AnimeStats stats={episodeInformation} />
+          <AnimeStats stats={episodesInformation} />
           <Rating average={anime.averageScore} />
           <AnimeStats stats={formatInformation} />
           <AnimeStats stats={datesInformation} />

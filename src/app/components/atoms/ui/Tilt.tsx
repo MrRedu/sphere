@@ -11,6 +11,20 @@ import {
 } from 'motion/react'
 import React, { useRef } from 'react'
 
+/**
+ * A component that creates a tilt effect on hover.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS classes to apply to the component.
+ * @param {Object} [props.style] - Additional CSS styles to apply to the component.
+ * @param {number} [props.rotationFactor=15] - The factor to multiply the tilt rotation by.
+ * @param {boolean} [props.isRevese=false] - Whether to reverse the tilt rotation.
+ * @param {SpringOptions} [props.springOptions] - Configuration options for the spring animation.
+ *
+ * @returns {JSX.Element} A motion div element that follows the mouse pointer
+ * and creates a tilt effect.
+ */
+
 type TiltProps = {
   children: React.ReactNode
   className?: string

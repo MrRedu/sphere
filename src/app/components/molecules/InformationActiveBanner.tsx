@@ -37,7 +37,7 @@ export const InformationActiveBanner = ({
           {title || 'Unknown'}
         </h2>
 
-        <ul className="flex gap-4 text-xs lg:gap-6 lg:text-sm">
+        <ul className="flex gap-4 text-base lg:gap-6 lg:text-sm">
           {genres?.slice(0, 3).map((genre: string, index: number) => (
             <li
               key={index}
