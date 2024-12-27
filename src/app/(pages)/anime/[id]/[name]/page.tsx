@@ -26,6 +26,7 @@ import { AnimeStats } from '@/components/molecules/AnimeStats'
 import { BannerImage } from '@/components/molecules/BannerImage'
 import { capitalize, formatDate } from '@/lib/utils'
 import { Anime, Media } from '#/src/app/types/anime.type'
+import Link from 'next/link'
 
 const GET_ANIME_BY_ID = gql`
   query GetAnime($id: Int) {
@@ -220,6 +221,7 @@ export default function AnimePage({ params }: { params: Params }) {
           </div>
         </div>
         <div className="flex flex-col gap-4">
+          {/* Title */}
           <TextLoop className="text-wrap">
             {anime.title?.english && (
               <h2
@@ -239,17 +241,22 @@ export default function AnimePage({ params }: { params: Params }) {
           {/* Genres */}
           <div className="flex flex-wrap gap-2">
             {anime.genres.map(genre => (
-              <Chip key={genre}>
-                <span className="text-sm font-semibold">{genre}</span>
-              </Chip>
+              <Link key={genre} href={`/animes/genre/${genre}`}>
+                <Chip key={genre}>
+                  <span className="text-sm font-semibold">{genre}</span>
+                </Chip>
+              </Link>
             ))}
           </div>
-
+          {/* Episodes, Episodes Duration, Origin */}
           <AnimeStats stats={episodesInformation} />
+          {/* Rating */}
           <Rating average={anime.averageScore} />
+          {/* Format & Type */}
           <AnimeStats stats={formatInformation} />
+          {/* Start Date & End Date */}
           <AnimeStats stats={datesInformation} />
-
+          {/* Description */}
           <RichText content={anime.description} />
         </div>
         {/* 

@@ -6,8 +6,9 @@ import Section from '@/components/atoms/Section'
 import { usePagination } from '@/hooks/usePagination'
 
 import { SimpleAnime } from '../../types/anime.type'
-import { Gallery } from '../organisms/Gallery'
-import { Pagination } from '../organisms/ui/Pagination'
+import { Gallery } from '@/components/organisms/Gallery'
+import { Pagination } from '@/components/organisms/ui/Pagination'
+import { GenreList } from '@/components/organisms/GenreList'
 
 /**
  * A simple gallery component that fetches a list of animes from the Anilist API
@@ -82,8 +83,9 @@ export const SimpleGallery = () => {
 
   return (
     <Section className="flex w-full flex-col gap-8 py-16">
+      <h2 className="text-3xl font-bold">All Animes</h2>
+      <GenreList />
       <Gallery animes={animes} />
-
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}

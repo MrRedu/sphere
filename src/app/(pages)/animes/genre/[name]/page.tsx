@@ -37,8 +37,9 @@ type Params = Promise<{ slug: string[] }>
 
 export default function AnimesByGenrePage({ params }: { params: Params }) {
   const { name } = useParams()
+  const nameWithoutSpace = (name as string)?.replace(/%20/g, ' ')
   const { data, loading, error } = useQuery<Data>(GET_ANIMES_BY_GENRE, {
-    variables: { genre: name, perPage: 9, page: 1 },
+    variables: { genre: nameWithoutSpace, perPage: 9, page: 1 },
   })
 
   if (loading) return <p>Loading...</p>
@@ -46,7 +47,6 @@ export default function AnimesByGenrePage({ params }: { params: Params }) {
 
   const animes = data?.Page?.media as SimpleAnime[]
 
-  // Aquí puedes manejar los animes obtenidos como desees
   console.log(animes)
 
   return (
