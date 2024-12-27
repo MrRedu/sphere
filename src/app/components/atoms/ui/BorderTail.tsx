@@ -12,6 +12,22 @@ type BorderTrailProps = {
   style?: React.CSSProperties
 }
 
+/**
+ * Creates a border trail animation effect.
+ *
+ * This component renders a border trail animation which
+ * follows the shape of its parent element. The animation
+ * is a continuous loop and can be customized by passing
+ * in a transition object.
+ *
+ * @param {Object} props
+ * @prop {string} className - The class name to apply to the animation element.
+ * @prop {number} size - The size of the animation element.
+ * @prop {Object} transition - The animation transition object.
+ * @prop {number} delay - The animation delay.
+ * @prop {Function} onAnimationComplete - The callback function to call when the animation is complete.
+ * @prop {Object} style - The inline styles to apply to the animation element.
+ */
 export function BorderTrail({
   className,
   size = 60,

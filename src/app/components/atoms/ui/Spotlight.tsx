@@ -12,6 +12,18 @@ import React, { useCallback, useEffect, useRef, useState } from 'react'
 
 import { cn } from '@/lib/utils'
 
+/**
+ * Spotlight component that creates a spotlight effect on hover.
+ *
+ * @param {Object} props - The component props.
+ * @param {string} [props.className] - Additional CSS classes to apply to the component.
+ * @param {number} [props.size=200] - Size of the spotlight in pixels.
+ * @param {SpringOptions} [props.springOptions={ bounce: 0 }] - Configuration options for the spring animation.
+ *
+ * @returns {JSX.Element} A motion div element that follows the mouse pointer
+ * and creates a spotlight effect over the parent element.
+ */
+
 type SpotlightProps = {
   className?: string
   size?: number
