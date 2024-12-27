@@ -1,11 +1,11 @@
 import { HeroSection } from '@/components/organisms/HeroSection'
-import { Gallery } from '#/src/app/components/organisms/Gallery'
+import { SimpleGallery } from '@/components/layout/SimpleGallery'
 
 export default function HomePage() {
   return (
     <>
       <HeroSection />
-      <Gallery />
+      <SimpleGallery />
     </>
   )
 }
