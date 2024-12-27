@@ -1,9 +1,10 @@
 'use client'
 
-import Section from '@/components/atoms/Section'
-import { SimpleAnime } from '#/src/app/types/anime.type'
 import { gql, useQuery } from '@apollo/client'
 import { useParams } from 'next/navigation'
+
+import Section from '@/components/atoms/Section'
+import { SimpleAnime } from '#/src/app/types/anime.type'
 
 interface Data {
   Page: {

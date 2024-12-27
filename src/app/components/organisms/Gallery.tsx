@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { SimpleAnime } from '../../types/anime.type'
 import { AnimatedGroup } from '@/components/atoms/ui/AnimatedGroup'
+
+import { SimpleAnime } from '../../types/anime.type'
 
 /**
  * A component that displays a list of anime as a grid of cards. The cards

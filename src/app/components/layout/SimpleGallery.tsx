@@ -3,10 +3,24 @@ import { gql, useQuery } from '@apollo/client'
 import { useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
-import { SimpleAnime } from '../../types/anime.type'
 import { usePagination } from '@/hooks/usePagination'
+
+import { SimpleAnime } from '../../types/anime.type'
 import { Gallery } from '../organisms/Gallery'
 import { Pagination } from '../organisms/ui/Pagination'
+
+/**
+ * A simple gallery component that fetches a list of animes from the Anilist API
+ * and displays them in a grid. The component also includes a pagination control
+ * that allows the user to navigate through the list of animes.
+ *
+ * @remarks
+ * The component uses the `useQuery` hook from `@apollo/client` to fetch the list
+ * of animes from the Anilist API. The component also uses the `usePagination`
+ * hook to manage the pagination state.
+ *
+ * @returns A JSX element representing the gallery component.
+ */
 
 interface Data {
   Page: {
@@ -44,7 +58,6 @@ const ANIMES = gql`
     }
   }
 `
-
 export const SimpleGallery = () => {
   const perPage = 9
   const [totalPages, setTotalPages] = useState(0)

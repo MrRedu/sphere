@@ -11,15 +11,13 @@ export const usePagination = (totalPages: number) => {
     pages.push(1) // Siempre incluir la primera página
 
     if (currentPage > 3) {
-      pages.push(currentPage - 2)
-      pages.push(currentPage - 1)
+      pages.push(currentPage - 2, currentPage - 1)
     }
 
     pages.push(currentPage) // Siempre incluir la página actual
 
     if (currentPage < totalPages - 2) {
-      pages.push(currentPage + 1)
-      pages.push(currentPage + 2)
+      pages.push(currentPage + 1, currentPage + 2)
     }
 
     if (currentPage < totalPages - 3) {
@@ -30,7 +28,7 @@ export const usePagination = (totalPages: number) => {
       pages.push(totalPages) // Asegurarse de incluir la última página
     }
 
-    return Array.from(new Set(pages)) // Remover duplicados
+    return [...new Set(pages)] // Remover duplicados
   }
 
   return { currentPage, setCurrentPage, getPaginationRange }
