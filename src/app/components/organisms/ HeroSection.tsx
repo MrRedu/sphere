@@ -1,14 +1,12 @@
 'use client'
 
 import { gql, useQuery } from '@apollo/client'
-import { Play } from 'lucide-react'
-import Link from 'next/link'
 import { useState } from 'react'
 
-import { Swiper } from '@/components/organisms/Swiper'
-
 import Section from '@/components/atoms/Section'
+import { Swiper } from '@/components/organisms/Swiper'
 import { BannerImage } from '#/src/app/components/molecules/BannerImage'
+
 import { Anime } from '../../types/anime.type'
 import { InformationActiveBanner } from '../molecules/InformationActiveBanner'
 
@@ -48,7 +46,7 @@ export const HeroSection = () => {
 
   return (
     <div className="mt-18 relative -top-16 h-screen sm:mt-0">
-      <Section className="relative flex h-screen flex-col justify-end">
+      <Section className="relative flex h-screen flex-col justify-end pb-4">
         <BannerImage
           banner={animes?.[currentIndex]?.bannerImage}
           title={

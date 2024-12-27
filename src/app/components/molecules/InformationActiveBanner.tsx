@@ -1,4 +1,4 @@
-import { Play } from 'lucide-react'
+import { TvMinimalPlay } from 'lucide-react'
 import Link from 'next/link'
 
 /**
@@ -32,14 +32,17 @@ export const InformationActiveBanner = ({
     <div className={`flex flex-col justify-end gap-4 sm:max-w-lg`}>
       <div className="animate-fadeInUp flex min-h-[100px] flex-col justify-end gap-4">
         <h2
-          className={`mv:text-2xl lg:text-4xlb line-clamp-2 text-xl font-medium uppercase text-white md:text-[1.9rem]`}
+          className={`mv:text-2xl lg:text-4xlb line-clamp-2 text-xl font-medium uppercase text-light md:text-[1.9rem]`}
         >
           {title}
         </h2>
 
         <ul className="flex gap-4 text-xs lg:gap-6 lg:text-sm">
           {genres?.slice(0, 3).map((genre: string, index: number) => (
-            <li key={index} className="text-txtGray2 hover:text-white">
+            <li
+              key={index}
+              className="transition duration-300 hover:text-stone-300"
+            >
               <Link href={`/animes/genre/${genre}`}>{genre}</Link>
             </li>
           ))}
@@ -49,9 +52,9 @@ export const InformationActiveBanner = ({
       <Link
         aria-label={`See information about ${title}`}
         href={`/anime/${id}/${title}`}
-        className="h-[36px] w-[36px] transition duration-300 hover:scale-125 sm:mt-4 lg:h-[45px] lg:w-[45px]"
+        className="h-[36px] w-[36px] transition duration-300 sm:mt-4 md:hover:scale-110 lg:h-[45px] lg:w-[45px]"
       >
-        <Play />
+        <TvMinimalPlay />
       </Link>
     </div>
   )

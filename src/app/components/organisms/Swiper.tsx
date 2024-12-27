@@ -4,16 +4,17 @@ import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import '../../styles/swiper.css'
 
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { ChevronLeft, ChevronRight } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 
-import useWindowSize from '@/hooks/useWindowSize'
-import { Anime } from '../../types/anime.type'
 import { SkeletonCarousel } from '@/components/atoms/skeletons/SkeletonCarousel'
+import useWindowSize from '@/hooks/useWindowSize'
+
+import { Anime } from '../../types/anime.type'
 
 export const Swiper = ({
   animes,
@@ -103,7 +104,7 @@ export const Swiper = ({
             'absolute -right-9 -top-1 hidden w-6 text-light opacity-80 md:block lg:-right-11 lg:-top-2 lg:w-7'
           }
         >
-          <ArrowRight />
+          <ChevronRight />
         </div>
       </div>
 
@@ -114,7 +115,7 @@ export const Swiper = ({
             'absolute -left-9 -top-1 hidden w-6 text-light opacity-80 md:block lg:-left-11 lg:-top-5 lg:w-7'
           }
         >
-          <ArrowLeft />
+          <ChevronLeft />
         </div>
       </div>
 
