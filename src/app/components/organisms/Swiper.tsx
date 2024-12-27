@@ -13,7 +13,7 @@ import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 
 import useWindowSize from '@/hooks/useWindowSize'
 import { Anime } from '../../types/anime.type'
-import { CarruselSkeleton } from '@/components/atoms/skeletons/CarruselSkeleton'
+import { SkeletonCarousel } from '@/components/atoms/skeletons/SkeletonCarousel'
 
 export const Swiper = ({
   animes,
@@ -62,7 +62,7 @@ export const Swiper = ({
         autoplay={{ delay: 10_000 }}
         onSwiper={() => setSwiperReady(true)}
       >
-        {swiperReady  ? (
+        {swiperReady ? (
           animes?.slice(0, showMovies).map(anime => (
             <SwiperSlide key={anime.id} className="cursor-grab object-cover">
               <Link
@@ -92,7 +92,7 @@ export const Swiper = ({
             </SwiperSlide>
           ))
         ) : (
-          <CarruselSkeleton />
+          <SkeletonCarousel />
         )}
       </SwiperComponent>
 
