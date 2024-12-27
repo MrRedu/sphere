@@ -7,7 +7,7 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 ## Funcionalidades Requeridas
 
 - [ ] Página de inicio con lista de animes
-- [ ] Consumir la API de Anilist API para obtener y mostrar una lista de animes.
+- [x] Consumir la API de Anilist API para obtener y mostrar una lista de animes.
 - [ ] Implementar paginación para manejar grandes cantidades de datos.
 - [ ] Mostrar información básica de cada anime (nombre, formato, episodios categorías, imagen, score y status).
 
@@ -31,7 +31,8 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 - [ ] Incluir animaciones y transiciones suaves entre vistas.
 - [ ] Implementación de estrategias de SEO
 - [ ] Implementar las mejores prácticas de SEO, incluyendo meta tags y Open Graph tags.
-- [ ] Utilizar técnicas de pre-rendering y SSR (Server-Side Rendering) para mejorar el SEO. Implementar rutas amigables para SEO.
+- [ ] Utilizar técnicas de pre-rendering y SSR (Server-Side Rendering) para mejorar el SEO.
+- [x] Implementar rutas amigables para SEO.
 
 ## Validaciones y manejo de errores
 
@@ -51,7 +52,7 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 ### Lenguaje
 
-- [ ] Utilizar TypeScript con interfaces y tipos estrictos en todo el código.
+- [x] Utilizar TypeScript con interfaces y tipos estrictos en todo el código.
 
 ### Calidad de Código
 
@@ -59,7 +60,7 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 ### Estilos
 
-- [ ] Utilizar CSS o una librería de componentes Ul para estilos. <br>
+- [x] Utilizar CSS o una librería de componentes Ul para estilos. <br>
       _Se valorará el uso de Tailwind CSS o styled-components._
 
 ### Despliegue (Opcional)

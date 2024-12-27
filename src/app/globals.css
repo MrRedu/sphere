@@ -1,3 +1,28 @@
 @tailwind base;
 @tailwind components;
 @tailwind utilities;
+
+:root {
+  --width-scroll: 8px;
+}
+
+html {
+  scroll-behavior: smooth;
+}
+
+body {
+  @apply bg-dark;
+  @apply text-light;
+  scrollbar-gutter: stable;
+  overflow-x: hidden;
+}
+
+
+::-webkit-scrollbar {
+  width: var(--width-scroll);
+}
+
+::-webkit-scrollbar-thumb {
+  background-color: #4c4c4c;
+  border-radius: 3px;
+}
