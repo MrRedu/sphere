@@ -12,6 +12,7 @@ import {
   Play,
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { ReactCountryFlag } from 'react-country-flag'
 
@@ -26,7 +27,6 @@ import { AnimeStats } from '@/components/molecules/AnimeStats'
 import { BannerImage } from '@/components/molecules/BannerImage'
 import { capitalize, formatDate } from '@/lib/utils'
 import { Anime, Media } from '#/src/app/types/anime.type'
-import Link from 'next/link'
 
 const GET_ANIME_BY_ID = gql`
   query GetAnime($id: Int) {

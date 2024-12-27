@@ -1,8 +1,9 @@
 'use client'
-import Link from 'next/link'
-import { Chip } from '@/components/atoms/ui/Chip'
-import { useRef } from 'react'
 import { ChevronLeft, ChevronRight } from 'lucide-react'
+import Link from 'next/link'
+import { useRef } from 'react'
+
+import { Chip } from '@/components/atoms/ui/Chip'
 
 const genres = [
   'Action',

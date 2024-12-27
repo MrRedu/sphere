@@ -3,12 +3,12 @@ import { gql, useQuery } from '@apollo/client'
 import { useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
+import { Gallery } from '@/components/organisms/Gallery'
+import { GenreList } from '@/components/organisms/GenreList'
+import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
 
 import { SimpleAnime } from '../../types/anime.type'
-import { Gallery } from '@/components/organisms/Gallery'
-import { Pagination } from '@/components/organisms/ui/Pagination'
-import { GenreList } from '@/components/organisms/GenreList'
 
 /**
  * A simple gallery component that fetches a list of animes from the Anilist API
