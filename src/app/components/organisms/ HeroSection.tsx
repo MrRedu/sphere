@@ -26,7 +26,7 @@ interface Data {
   }
 }
 
-export const ANIMES = gql`
+const ANIMES = gql`
   query Page {
     Page(perPage: 1) {
       media {
