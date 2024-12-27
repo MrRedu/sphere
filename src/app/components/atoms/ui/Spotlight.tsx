@@ -1,6 +1,15 @@
 'use client'
-import React, { useRef, useState, useCallback, useEffect } from 'react'
-import { motion, useSpring, useTransform, SpringOptions } from 'motion/react'
+/* eslint-disable unicorn/no-invalid-remove-event-listener */
+/* eslint-disable unicorn/no-null */
+
+import {
+  motion,
+  type SpringOptions,
+  useSpring,
+  useTransform,
+} from 'motion/react'
+import React, { useCallback, useEffect, useRef, useState } from 'react'
+
 import { cn } from '@/lib/utils'
 
 type SpotlightProps = {

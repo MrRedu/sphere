@@ -1,4 +1,4 @@
-import { StarHalf, Star } from 'lucide-react'
+import { Star, StarHalf } from 'lucide-react'
 
 const MAX_RATING = 5
 
@@ -10,13 +10,13 @@ const calculateRoundedRating = (average: number): number => {
 const renderStars = (rating: number) => {
   const stars = []
 
-  for (let i = 0; i < MAX_RATING; i++) {
-    if (i < Math.floor(rating)) {
-      stars.push(<Star key={i} className="text-primary" />)
-    } else if (i === Math.floor(rating) && rating % 1 !== 0) {
-      stars.push(<StarHalf key={i} className="text-primary" />)
+  for (let index = 0; index < MAX_RATING; index++) {
+    if (index < Math.floor(rating)) {
+      stars.push(<Star key={index} className="text-primary" />)
+    } else if (index === Math.floor(rating) && rating % 1 !== 0) {
+      stars.push(<StarHalf key={index} className="text-primary" />)
     } else {
-      stars.push(<Star key={i} className="text-zinc-500" />)
+      stars.push(<Star key={index} className="text-zinc-500" />)
     }
   }
 

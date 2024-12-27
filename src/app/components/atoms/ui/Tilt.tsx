@@ -1,15 +1,15 @@
 'use client'
 
-import React, { useRef } from 'react'
 import {
   motion,
+  type MotionStyle,
+  type SpringOptions,
   useMotionTemplate,
   useMotionValue,
   useSpring,
   useTransform,
-  MotionStyle,
-  SpringOptions,
 } from 'motion/react'
+import React, { useRef } from 'react'
 
 type TiltProps = {
   children: React.ReactNode
@@ -53,14 +53,14 @@ export function Tilt({
 
   const transform = useMotionTemplate`perspective(1000px) rotateX(${rotateX}deg) rotateY(${rotateY}deg)`
 
-  const handleMouseMove = (e: React.MouseEvent<HTMLDivElement>) => {
+  const handleMouseMove = (event: React.MouseEvent<HTMLDivElement>) => {
     if (!ref.current) return
 
     const rect = ref.current.getBoundingClientRect()
     const width = rect.width
     const height = rect.height
-    const mouseX = e.clientX - rect.left
-    const mouseY = e.clientY - rect.top
+    const mouseX = event.clientX - rect.left
+    const mouseY = event.clientY - rect.top
 
     const xPos = mouseX / width - 0.5
     const yPos = mouseY / height - 0.5

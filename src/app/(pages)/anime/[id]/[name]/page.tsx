@@ -1,17 +1,5 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
-import { useParams } from 'next/navigation'
-
-import Section from '@/components/atoms/Section'
-import { BannerImage } from '@/components/molecules/BannerImage'
-import { Media, Anime } from '#/src/app/types/anime.type'
-import Image from 'next/image'
-import { Tilt } from '@/components/atoms/ui/Tilt'
-import { Spotlight } from '@/components/atoms/ui/Spotlight'
-import { TextLoop } from '@/components/atoms/ui/TextLoop'
-import { Chip } from '@/components/atoms/ui/Chip'
-import ReactCountryFlag from 'react-country-flag'
-import { RichText } from '@/components/atoms/ui/RichText'
 import {
   CirclePlay,
   Clapperboard,
@@ -23,9 +11,21 @@ import {
   MoveUp,
   Play,
 } from 'lucide-react'
-import { capitalize, formatDate } from '@/lib/utils'
+import Image from 'next/image'
+import { useParams } from 'next/navigation'
+import { ReactCountryFlag } from 'react-country-flag'
+
+import Section from '@/components/atoms/Section'
+import { Chip } from '@/components/atoms/ui/Chip'
 import { Rating } from '@/components/atoms/ui/Rating'
+import { RichText } from '@/components/atoms/ui/RichText'
+import { Spotlight } from '@/components/atoms/ui/Spotlight'
+import { TextLoop } from '@/components/atoms/ui/TextLoop'
+import { Tilt } from '@/components/atoms/ui/Tilt'
 import { AnimeStats } from '@/components/molecules/AnimeStats'
+import { BannerImage } from '@/components/molecules/BannerImage'
+import { capitalize, formatDate } from '@/lib/utils'
+import { Anime, Media } from '#/src/app/types/anime.type'
 
 const GET_ANIME_BY_ID = gql`
   query GetAnime($id: Int) {
