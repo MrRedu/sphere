@@ -7,12 +7,12 @@ import Section from '@/components/atoms/Section'
 import { Swiper } from '@/components/organisms/Swiper'
 import { BannerImage } from '#/src/app/components/molecules/BannerImage'
 
-import { Anime } from '../../types/anime.type'
+import { SimpleAnime } from '../../types/anime.type'
 import { InformationActiveBanner } from '../molecules/InformationActiveBanner'
 
 interface Data {
   Page: {
-    media: Anime[]
+    media: SimpleAnime[]
   }
 }
 
@@ -42,7 +42,7 @@ export const HeroSection = () => {
   const [currentIndex, setCurrentIndex] = useState(0)
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
-  const animes = data?.Page?.media as Anime[]
+  const animes = data?.Page?.media as SimpleAnime[]
 
   return (
     <div className="mt-18 relative -top-16 h-screen sm:mt-0">
