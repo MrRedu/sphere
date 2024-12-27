@@ -5,126 +5,23 @@ import 'swiper/css/navigation'
 import '../../styles/swiper.css'
 
 import { ArrowLeft, ArrowRight } from 'lucide-react'
-// import { getPosterUrl } from '@/utils/getPosterUrl'
 import Image from 'next/image'
-// import { CarruselSkeleton } from '../UI/skeletons'
 import Link from 'next/link'
 import { useMemo, useState } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 
 import useWindowSize from '@/hooks/useWindowSize'
+import { Anime } from '../../types/anime.type'
+import { CarruselSkeleton } from '@/components/atoms/skeletons/CarruselSkeleton'
 
-const movies = [
-  {
-    id: 1,
-    title: 'The Shawshank Redemption',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 2,
-    title: 'The Godfather',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 3,
-    title: 'The Dark Knight',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 4,
-    title: 'Inception',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 5,
-    title: 'Interstellar',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 6,
-    title: 'The Matrix',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 7,
-    title: 'The Lord of the Rings: The Fellowship of the Ring',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 8,
-    title: 'The Lord of the Rings: The Two Towers',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 9,
-    title: 'The Lord of the Rings: The Return of the King',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 10,
-    title: 'Pulp Fiction',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 11,
-    title: 'The Silence of the Lambs',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 12,
-    title: 'The Green Mile',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 13,
-    title: 'The Usual Suspects',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 14,
-    title: 'The Departed',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 15,
-    title: "Schindler's List",
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 16,
-    title: 'Gladiator',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 17,
-    title: 'The Prestige',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 18,
-    title: 'The Lion King',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 19,
-    title: 'The Dark Knight Rises',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-  {
-    id: 20,
-    title: 'Inglourious Basterds',
-    poster: 'https://via.placeholder.com/300x450',
-  },
-]
-
-export default function Swiper({
-  // movies,
+export const Swiper = ({
+  animes,
   setCurrentIndex,
 }: {
-  // movies: MoviesAndSeries[] | undefined
+  animes: Anime[]
   setCurrentIndex: (index: number) => void
-}) {
+}) => {
   const [swiperReady, setSwiperReady] = useState(false)
   const windowSize = useWindowSize()
 
@@ -165,33 +62,38 @@ export default function Swiper({
         autoplay={{ delay: 10_000 }}
         onSwiper={() => setSwiperReady(true)}
       >
-        {swiperReady
-          ? movies?.slice(0, showMovies).map(movie => (
-              <SwiperSlide key={movie.id} className="cursor-grab object-cover">
-                <Link
-                  href={`/media/${movie.id}/${movie.title}`}
-                  className="aspect-[9/14] h-auto w-auto"
-                >
-                  <Image
-                    src={movie.poster}
-                    alt={`poster_path ${movie.title}`}
-                    width={206}
-                    height={300}
-                    className={`aspect-[9/14] rounded object-cover mix-blend-normal`}
-                    quality={80}
-                    style={{
-                      width: 'auto',
-                      height: 'auto',
-                      aspectRatio: '9/14',
-                    }}
-                    priority={true}
-                    placeholder="empty"
-                  />
-                </Link>
-              </SwiperSlide>
-            ))
-          : // <CarruselSkeleton />
-            undefined}
+        {swiperReady  ? (
+          animes?.slice(0, showMovies).map(anime => (
+            <SwiperSlide key={anime.id} className="cursor-grab object-cover">
+              <Link
+                href={`/anime/${anime.id}/${anime.title?.english || anime.title?.native || 'Unknown'}`}
+                className="aspect-[9/14] h-auto w-auto"
+              >
+                <Image
+                  src={
+                    anime.coverImage?.large ||
+                    anime.coverImage?.medium ||
+                    'https://via.placeholder.com/300x450'
+                  }
+                  alt={`poster_path ${anime.title?.english || anime.title?.native || 'Unknown'}`}
+                  width={300}
+                  height={450}
+                  className={`aspect-[9/14] rounded object-cover mix-blend-normal`}
+                  quality={80}
+                  style={{
+                    width: '100%',
+                    height: '100%',
+                    aspectRatio: '9/14',
+                  }}
+                  priority={true}
+                  placeholder="empty"
+                />
+              </Link>
+            </SwiperSlide>
+          ))
+        ) : (
+          <CarruselSkeleton />
+        )}
       </SwiperComponent>
 
       {/* Botón de avanzar */}
