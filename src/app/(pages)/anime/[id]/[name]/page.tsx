@@ -31,11 +31,9 @@ interface Anime {
   description: string
 }
 
-export default function AnimePage({
-  params,
-}: {
-  params: { id: string; name: string }
-}) {
+type Params = Promise<{ slug: string[] }>
+
+export default function AnimePage({ params }: { params: Params }) {
   const { id, name } = useParams()
   const { data, loading, error } = useQuery(GET_ANIME_BY_ID, {
     variables: { id: Number(id) },
@@ -49,11 +47,11 @@ export default function AnimePage({
   return (
     <Section>
       <div
-        className={`after:h-[calc(100vh - 65px)] h-[calc(100vh - 65px)] before:h-[calc(100vh - 65px)] before:bg-gradiantBotton after:bg-gradiantLeft absolute inset-0 -z-50 flex h-full w-full before:absolute before:inset-0 before:z-[1] before:content-[''] after:absolute after:inset-0 after:content-[''] sm:h-screen before:sm:h-screen after:sm:h-screen`}
+        className={`after:h-[calc(100vh - 65px)] h-[calc(100vh - 65px)] before:h-[calc(100vh - 65px)] absolute inset-0 -z-50 flex h-full w-full before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:content-[''] sm:h-screen before:sm:h-screen after:sm:h-screen`}
       >
         <div
           className={
-            'h-[calc(100vh - 65px)] after:h-[calc(100vh - 65px)] after:bg-gradiantTop2 absolute right-0 top-0 h-full w-full after:absolute after:inset-0 sm:h-screen after:sm:h-screen'
+            'h-[calc(100vh - 65px)] after:h-[calc(100vh - 65px)] absolute right-0 top-0 h-full w-full after:absolute after:inset-0 after:bg-gradiantTop2 sm:h-screen after:sm:h-screen'
           }
         >
           <Image

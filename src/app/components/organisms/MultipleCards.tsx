@@ -21,7 +21,7 @@ interface Data {
   }
 }
 
- const ANIMES = gql`
+const ANIMES = gql`
   query Page {
     Page(perPage: 5) {
       media {
