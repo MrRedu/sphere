@@ -1,19 +1,19 @@
 'use client'
-import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
-import { Autoplay, Pagination, Navigation } from 'swiper/modules'
 import 'swiper/css'
 import 'swiper/css/pagination'
 import 'swiper/css/navigation'
 import '../../styles/swiper.css'
 
-import { useMemo, useState } from 'react'
-
-import useWindowSize from '@/hooks/useWindowSize'
+import { ArrowLeft, ArrowRight } from 'lucide-react'
 // import { getPosterUrl } from '@/utils/getPosterUrl'
 import Image from 'next/image'
 // import { CarruselSkeleton } from '../UI/skeletons'
 import Link from 'next/link'
-import { ArrowLeft, ArrowRight } from 'lucide-react'
+import { useMemo, useState } from 'react'
+import { Autoplay, Navigation, Pagination } from 'swiper/modules'
+import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
+
+import useWindowSize from '@/hooks/useWindowSize'
 
 const movies = [
   {
@@ -162,7 +162,7 @@ export default function Swiper({
         }}
         modules={[Pagination, Navigation, Autoplay]}
         className="mySwiper"
-        autoplay={{ delay: 10000 }}
+        autoplay={{ delay: 10_000 }}
         onSwiper={() => setSwiperReady(true)}
       >
         {swiperReady
@@ -191,14 +191,14 @@ export default function Swiper({
               </SwiperSlide>
             ))
           : // <CarruselSkeleton />
-            null}
+            undefined}
       </SwiperComponent>
 
       {/* Botón de avanzar */}
       <div className="swiper-button-next">
         <div
           className={
-            'text-light absolute -right-9 -top-1 hidden w-6 opacity-80 md:block lg:-right-11 lg:-top-2 lg:w-7'
+            'absolute -right-9 -top-1 hidden w-6 text-light opacity-80 md:block lg:-right-11 lg:-top-2 lg:w-7'
           }
         >
           <ArrowRight />
@@ -209,7 +209,7 @@ export default function Swiper({
       <div className="swiper-button-prev">
         <div
           className={
-            'text-light absolute -left-9 -top-1 hidden w-6 opacity-80 md:block lg:-left-11 lg:-top-5 lg:w-7'
+            'absolute -left-9 -top-1 hidden w-6 text-light opacity-80 md:block lg:-left-11 lg:-top-5 lg:w-7'
           }
         >
           <ArrowLeft />

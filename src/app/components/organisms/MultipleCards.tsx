@@ -1,8 +1,9 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
-import Section from '@/components/atoms/Section'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import Section from '@/components/atoms/Section'
 
 interface Anime {
   id: number
@@ -52,7 +53,7 @@ export const MultipleCards = () => {
           <Link
             key={anime.id}
             href={`/anime/${anime.id}/${anime.title.english?.replace(/[^a-zA-Z0-9]/g, '')}`}
-            className="hover:bg-dark/50 relative flex h-[220px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-sm p-4 transition-colors duration-500 ease-in-out"
+            className="relative flex h-[220px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-sm p-4 transition-colors duration-500 ease-in-out hover:bg-dark/50"
           >
             <Image
               src={anime.bannerImage || 'https://via.placeholder.com/300x450'}

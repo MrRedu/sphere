@@ -17,7 +17,6 @@ body {
   overflow-x: hidden;
 }
 
-
 ::-webkit-scrollbar {
   width: var(--width-scroll);
 }

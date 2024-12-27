@@ -1,12 +1,14 @@
 'use client'
 
 import { gql, useQuery } from '@apollo/client'
-import Swiper from '@/components/organisms/Swiper'
-import { useState } from 'react'
-import Section from '../atoms/Section'
+import { Play } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
-import { Play } from 'lucide-react'
+import { useState } from 'react'
+
+import Swiper from '@/components/organisms/Swiper'
+
+import Section from '../atoms/Section'
 
 interface Anime {
   id: number
@@ -52,11 +54,11 @@ export const HeroSection = () => {
     <div className="mt-18 relative -top-16 h-screen sm:mt-0">
       <Section className="relative flex h-screen flex-col justify-end">
         <div
-          className={`after:bg-gradiantLeft after:h-[calc(100vh - 65px)] h-[calc(100vh - 65px)] before:bg-gradiantBotton before:h-[calc(100vh - 65px)] absolute inset-0 -z-50 flex h-full w-full before:absolute before:inset-0 before:z-[1] before:content-[''] after:absolute after:inset-0 after:content-[''] sm:h-screen before:sm:h-screen after:sm:h-screen`}
+          className={`after:h-[calc(100vh - 65px)] h-[calc(100vh - 65px)] before:h-[calc(100vh - 65px)] absolute inset-0 -z-50 flex h-full w-full before:absolute before:inset-0 before:z-[1] before:bg-gradiantBotton before:content-[''] after:absolute after:inset-0 after:bg-gradiantLeft after:content-[''] sm:h-screen before:sm:h-screen after:sm:h-screen`}
         >
           <div
             className={
-              'h-[calc(100vh - 65px)] after:bg-gradiantTop2 after:h-[calc(100vh - 65px)] absolute right-0 top-0 h-full w-full after:absolute after:inset-0 sm:h-screen after:sm:h-screen'
+              'h-[calc(100vh - 65px)] after:h-[calc(100vh - 65px)] absolute right-0 top-0 h-full w-full after:absolute after:inset-0 after:bg-gradiantTop2 sm:h-screen after:sm:h-screen'
             }
           >
             <Image
