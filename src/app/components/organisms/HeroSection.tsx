@@ -63,7 +63,7 @@ export const HeroSection = () => {
           />
 
           <h2 className="relative z-20 mb-3 font-medium uppercase">
-            Most Popular
+            Most watched
           </h2>
           <Swiper setCurrentIndex={setCurrentIndex} animes={animes} />
         </div>

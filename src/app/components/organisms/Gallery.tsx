@@ -25,7 +25,7 @@ export const Gallery = ({ animes }: { animes: SimpleAnime[] }) => {
           className="relative flex h-[220px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-sm bg-dark/70 p-4 transition-colors duration-500 ease-in-out lg:bg-transparent lg:hover:bg-dark/70"
         >
           <Image
-            src={anime.bannerImage || 'https://via.placeholder.com/300x450'}
+            src={anime.bannerImage || '/placeholder_300x450.jpg'}
             alt={`Poster ${anime.title.english || anime.title.native || 'Unknown'}`}
             className="absolute inset-0 -z-10 h-full w-full object-cover"
             width={1280}

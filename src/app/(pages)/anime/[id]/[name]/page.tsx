@@ -137,7 +137,8 @@ export default function AnimePage({ params }: { params: Params }) {
       id: 1,
       // field: 'Status',
       data: capitalize(anime.status),
-      icon: anime.status === 'FINISHED' ? <Heart size={14} /> : <Play size={14} />,
+      icon:
+        anime.status === 'FINISHED' ? <Heart size={14} /> : <Play size={14} />,
     },
     {
       id: 2,
@@ -174,7 +175,7 @@ export default function AnimePage({ params }: { params: Params }) {
   return (
     <>
       {/* Overlay */}
-      <div className="absolute inset-0 -z-10 bg-dark/60" />
+      <div className="absolute inset-0 -z-10 bg-black/50" />
       <BannerImage
         banner={anime.bannerImage}
         title={anime.title.english || anime.title.native}
