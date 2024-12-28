@@ -14,3 +14,10 @@ export const formatDate = (date: string) => {
     month: 'long',
   })
 }
+
+export function hideEmail(email: string) {
+  const regex = /^(.)(.*?)(.)(@.*)$/
+  return email?.replace(regex, (match, p1, p2, p3, p4) => {
+    return p1 + '*'.repeat(p2.length) + p3 + p4
+  })
+}
