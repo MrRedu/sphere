@@ -19,7 +19,7 @@ const AnimeCard = ({
       href={`/anime/${anime.id}/${anime.title?.english || anime.title?.native || 'Unknown'}`}
       className={`relative ${overlay} h-full w-full overflow-hidden rounded-xl`}
     >
-      <div className="absolute bottom-4 left-4 z-50 flex flex-col gap-2">
+      <div className="absolute bottom-4 left-4 z-20 flex flex-col gap-2">
         <h3 className="text-sm font-medium uppercase">
           {anime.title?.english || anime.title?.native || 'Unknown'}
         </h3>
