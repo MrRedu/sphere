@@ -1,5 +1,7 @@
-import { LogoHeader } from '../../atoms/ui/LogoHeader'
-import { Sidebar } from './Sidebar'
+import { LogoHeader } from '@/components/atoms/ui/LogoHeader'
+import { SearchBar } from '@/components/molecules/ui/SearchBar'
+
+import { Avatar } from './Avatar'
 
 export const Header = () => {
   return (
@@ -9,7 +11,10 @@ export const Header = () => {
       </h1>
       <LogoHeader />
 
-      <Sidebar />
+      <div className="flex items-center gap-4">
+        <SearchBar />
+        <Avatar />
+      </div>
     </header>
   )
 }
