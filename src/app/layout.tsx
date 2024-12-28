@@ -3,7 +3,8 @@ import './globals.css'
 import type { Metadata } from 'next'
 import { Geist, Geist_Mono } from 'next/font/google'
 
-import { Header } from '@/components/organisms/Header'
+import { Header } from '@/components/organisms/ui/Header'
+import { Footer } from '@/components/organisms/ui/Footer'
 import { Providers } from '@/components/Providers'
 
 const geistSans = Geist({
@@ -70,6 +71,7 @@ export default function RootLayout({
         <Providers>
           <Header />
           <section className="mx-auto max-w-screen-2xl">{children}</section>
+          <Footer />
         </Providers>
       </body>
     </html>
