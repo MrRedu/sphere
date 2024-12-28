@@ -6,9 +6,9 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 ## Funcionalidades Requeridas
 
-- [ ] Página de inicio con lista de animes
+- [x] Página de inicio con lista de animes
 - [x] Consumir la API de Anilist API para obtener y mostrar una lista de animes.
-- [ ] Implementar paginación para manejar grandes cantidades de datos.
+- [+-] Implementar paginación para manejar grandes cantidades de datos.
 - [ ] Mostrar información básica de cada anime (nombre, formato, episodios categorías, imagen, score y status).
 
 ## Barra de búsqueda multifuncional
@@ -18,8 +18,8 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 ## Página de detalles del anime
 
-- [ ] Implementar una vista de detalles que muestre la información completa del anime seleccionado, incluyendo: nombre, estado, episodios, score, categorías, temporada, studio y resumen
-- [ ] Imagen del anime
+- [x] Implementar una vista de detalles que muestre la información completa del anime seleccionado, incluyendo: nombre, estado, episodios, score, categorías, temporada, studio y resumen
+- [x] Imagen del anime
 - [ ] Implementar sistema de animes favoritos
 - [ ] Implementar una funcionalidad que permita a los usuarios marcar animes como favoritos y guardarlos en el navegador (local storage).
 - [ ] Mostrar una lista de los animes favoritos guardados.

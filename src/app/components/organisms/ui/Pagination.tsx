@@ -16,14 +16,14 @@ export const Pagination = ({
   paginationRange,
 }: PaginationProps) => {
   return (
-    <div className="flex items-center justify-center gap-2 py-4 font-bold">
+    <div className="flex flex-wrap items-center justify-center gap-2 py-4 font-bold">
       <Button
         onClick={() => setCurrentPage(currentPage - 1)}
         disabled={currentPage === 1}
         className={`transition-colors duration-300 ${currentPage === 1 ? 'cursor-not-allowed opacity-50' : ''}`}
       >
         <ChevronLeft />
-        Previous
+        <span className="hidden lg:block">Previous</span>
       </Button>
 
       {paginationRange.map(pg => (
@@ -46,7 +46,7 @@ export const Pagination = ({
         disabled={currentPage === totalPages}
         className={`transition-colors duration-300 ${currentPage === totalPages ? 'cursor-not-allowed opacity-50' : ''}`}
       >
-        Next
+        <span className="hidden lg:block">Next</span>
         <ChevronRight />
       </Button>
     </div>

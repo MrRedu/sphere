@@ -19,9 +19,24 @@ body {
 
 ::-webkit-scrollbar {
   width: var(--width-scroll);
+  height: var(--width-scroll);
 }
 
 ::-webkit-scrollbar-thumb {
   @apply bg-primary;
   border-radius: 3px;
+}
+
+@layer utilities {
+  .scrollbar-hidden::-webkit-scrollbar {
+    display: none;
+    /* Oculta la scrollbar para Chrome, Safari y Opera */
+  }
+
+  .scrollbar-hidden {
+    -ms-overflow-style: none;
+    /* IE y Edge */
+    scrollbar-width: none;
+    /* Firefox */
+  }
 }

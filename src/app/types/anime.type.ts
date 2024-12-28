@@ -28,6 +28,7 @@ export interface Anime {
   siteUrl: string
   format: string
   type: string
+  status: 'FINISHED' | 'RELEASING' | 'NOT_YET_RELEASED' | 'CANCELLED' | 'HIATUS'
   bannerImage: string
   coverImage: CoverImage
   averageScore: number

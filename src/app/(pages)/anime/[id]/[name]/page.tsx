@@ -12,6 +12,7 @@ import {
   Play,
 } from 'lucide-react'
 import Image from 'next/image'
+import Link from 'next/link'
 import { useParams } from 'next/navigation'
 import { ReactCountryFlag } from 'react-country-flag'
 
@@ -41,6 +42,7 @@ const GET_ANIME_BY_ID = gql`
       siteUrl
       format
       type
+      status
       bannerImage
       coverImage {
         medium
@@ -133,12 +135,19 @@ export default function AnimePage({ params }: { params: Params }) {
   const formatInformation = [
     {
       id: 1,
+      // field: 'Status',
+      data: capitalize(anime.status),
+      icon:
+        anime.status === 'FINISHED' ? <Heart size={14} /> : <Play size={14} />,
+    },
+    {
+      id: 2,
       // field: 'Format',
       data: capitalize(anime.format),
       icon: <Clapperboard size={14} />,
     },
     {
-      id: 2,
+      id: 3,
       // field: 'Type',
       data: capitalize(anime.type),
       icon: <CirclePlay size={14} />,
@@ -166,7 +175,7 @@ export default function AnimePage({ params }: { params: Params }) {
   return (
     <>
       {/* Overlay */}
-      <div className="absolute inset-0 -z-10 bg-dark/60" />
+      <div className="absolute inset-0 -z-10 bg-black/50" />
       <BannerImage
         banner={anime.bannerImage}
         title={anime.title.english || anime.title.native}
@@ -220,6 +229,7 @@ export default function AnimePage({ params }: { params: Params }) {
           </div>
         </div>
         <div className="flex flex-col gap-4">
+          {/* Title */}
           <TextLoop className="text-wrap">
             {anime.title?.english && (
               <h2
@@ -239,17 +249,22 @@ export default function AnimePage({ params }: { params: Params }) {
           {/* Genres */}
           <div className="flex flex-wrap gap-2">
             {anime.genres.map(genre => (
-              <Chip key={genre}>
-                <span className="text-sm font-semibold">{genre}</span>
-              </Chip>
+              <Link key={genre} href={`/animes/genre/${genre}`}>
+                <Chip key={genre}>
+                  <span className="text-sm font-semibold">{genre}</span>
+                </Chip>
+              </Link>
             ))}
           </div>
-
+          {/* Episodes, Episodes Duration, Origin */}
           <AnimeStats stats={episodesInformation} />
+          {/* Rating */}
           <Rating average={anime.averageScore} />
+          {/* Format & Type */}
           <AnimeStats stats={formatInformation} />
+          {/* Start Date & End Date */}
           <AnimeStats stats={datesInformation} />
-
+          {/* Description */}
           <RichText content={anime.description} />
         </div>
         {/* 

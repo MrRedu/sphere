@@ -76,7 +76,7 @@ export const Swiper = ({
                     anime.coverImage?.medium ||
                     '/placeholder_300x450.jpg'
                   }
-                  alt={`poster_path ${anime.title?.english || anime.title?.native || 'Unknown'}`}
+                  alt={`Poster ${anime.title?.english || anime.title?.native || 'Unknown'}`}
                   width={300}
                   height={450}
                   className={`aspect-[9/14] rounded object-cover mix-blend-normal`}
