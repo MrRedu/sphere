@@ -1,9 +1,10 @@
 'use client'
-import useOnlineStatus from '@/hooks/useIsOnline'
 import { UserCircle } from 'lucide-react'
-import { signIn, useSession } from 'next-auth/react'
 import Image from 'next/image'
 import Link from 'next/link'
+import { signIn, useSession } from 'next-auth/react'
+
+import useOnlineStatus from '@/hooks/useIsOnline'
 
 export const Avatar = () => {
   const { data: session, status } = useSession()

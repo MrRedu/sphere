@@ -1,6 +1,7 @@
 'use client' // <- Que sea server después
-import Section from '@/components/atoms/Section'
 import { signOut } from 'next-auth/react'
+
+import Section from '@/components/atoms/Section'
 
 export default function ProfilePage() {
   return (
