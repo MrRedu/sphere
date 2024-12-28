@@ -1,14 +1,15 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
-import { useEffect, useState } from 'react'
+import { lazy, Suspense, useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
-import { Gallery } from '@/components/organisms/Gallery'
 import { GenreList } from '@/components/organisms/GenreList'
 import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
 
 import { SimpleAnime } from '../../types/anime.type'
+
+const Gallery = lazy(() => import('@/components/organisms/Gallery'))
 
 /**
  * A simple gallery component that fetches a list of animes from the Anilist API
@@ -85,7 +86,9 @@ export const SimpleGallery = () => {
     <Section className="flex w-full flex-col gap-8 py-16">
       <h2 className="text-3xl font-bold">All Animes</h2>
       <GenreList />
-      <Gallery animes={animes} />
+      <Suspense fallback={<div>Loading Gallery...</div>}>
+        <Gallery animes={animes} />
+      </Suspense>
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}

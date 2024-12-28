@@ -26,6 +26,8 @@ import { Tilt } from '@/components/atoms/ui/Tilt'
 import { AnimeStats } from '@/components/molecules/AnimeStats'
 import { BannerImage } from '@/components/molecules/BannerImage'
 import { capitalize, formatDate } from '@/lib/utils'
+import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
+import { Button } from '#/src/app/components/molecules/ui/Button'
 import { Anime, Media } from '#/src/app/types/anime.type'
 
 const GET_ANIME_BY_ID = gql`
@@ -101,6 +103,10 @@ export default function AnimePage({ params }: { params: Params }) {
   const { data, loading, error } = useQuery<Media>(GET_ANIME_BY_ID, {
     variables: { id: Number(id) },
   })
+  const favouriteAnimes = useFavouriteAnimes(state => state.favouriteAnimes)
+  const toggleFavouriteAnime = useFavouriteAnimes(
+    state => state.toggleFavouriteAnime
+  )
 
   if (loading) return <p>Loading...</p>
   if (error) return <p>Error: {error.message}</p>
@@ -211,21 +217,26 @@ export default function AnimePage({ params }: { params: Params }) {
               />
             </div>
           </Tilt>
-          <div className="mt-4 flex w-full items-center justify-center gap-4">
-            <button
-              className={`flex gap-2 rounded border border-gray-600 px-4 py-2 text-center text-sm text-light shadow-sm transition-all hover:bg-dark hover:shadow-lg`}
-              type="button"
+          <div className="mt-4 flex items-center justify-center gap-4">
+            <Button
+              className="md:flex-grow"
+              onClick={() => toggleFavouriteAnime(anime.id)}
             >
-              <Heart />
-              Like
-            </button>
-            <button
-              className={`flex gap-2 rounded border border-gray-600 px-4 py-2 text-center text-sm text-light shadow-sm transition-all hover:bg-dark hover:shadow-lg`}
-              type="button"
-            >
+              {favouriteAnimes?.includes(anime.id) ? (
+                <Heart fill="currentColor" />
+              ) : (
+                <Heart />
+              )}
+              {favouriteAnimes?.includes(anime.id) ? (
+                <span className="hidden md:block">Liked</span>
+              ) : (
+                <span className="hidden md:block">Like</span>
+              )}
+            </Button>
+            <Button className="md:flex-grow">
               <Play />
-              See Trailer
-            </button>
+              <span className="hidden md:block">See Trailer</span>
+            </Button>
           </div>
         </div>
         <div className="flex flex-col gap-4">
