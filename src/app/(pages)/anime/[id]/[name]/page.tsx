@@ -42,6 +42,7 @@ const GET_ANIME_BY_ID = gql`
       siteUrl
       format
       type
+      status
       bannerImage
       coverImage {
         medium
@@ -134,12 +135,18 @@ export default function AnimePage({ params }: { params: Params }) {
   const formatInformation = [
     {
       id: 1,
+      // field: 'Status',
+      data: capitalize(anime.status),
+      icon: anime.status === 'FINISHED' ? <Heart size={14} /> : <Play size={14} />,
+    },
+    {
+      id: 2,
       // field: 'Format',
       data: capitalize(anime.format),
       icon: <Clapperboard size={14} />,
     },
     {
-      id: 2,
+      id: 3,
       // field: 'Type',
       data: capitalize(anime.type),
       icon: <CirclePlay size={14} />,
