@@ -32,7 +32,7 @@ import { Anime, Media } from '#/src/app/types/anime.type'
 
 const GET_ANIME_BY_ID = gql`
   query GetAnime($id: Int) {
-    Media(id: $id, type: ANIME) {
+    Media(id: $id) {
       id
       title {
         english

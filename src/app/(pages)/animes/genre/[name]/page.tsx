@@ -5,6 +5,7 @@ import { useParams } from 'next/navigation'
 
 import Section from '@/components/atoms/Section'
 import { SimpleAnime } from '#/src/app/types/anime.type'
+import Gallery from '@/components/organisms/Gallery'
 
 interface Data {
   Page: {
@@ -47,13 +48,9 @@ export default function AnimesByGenrePage({ params }: { params: Params }) {
 
   const animes = data?.Page?.media as SimpleAnime[]
 
-  console.log(animes)
-
   return (
     <Section>
-      {animes?.map(anime => (
-        <div key={anime.id}>{anime.title.english || anime.title.native}</div>
-      ))}
+      <Gallery animes={animes} />
     </Section>
   )
 }
