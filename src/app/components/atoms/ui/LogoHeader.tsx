@@ -3,7 +3,7 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import useWindowSize from '@/hooks/useWindowSize'
+import { useWindowSize } from '@/hooks/useWindowSize'
 
 export const LogoHeader = () => {
   const { width } = useWindowSize()

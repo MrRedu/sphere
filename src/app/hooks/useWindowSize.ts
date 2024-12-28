@@ -5,21 +5,21 @@ interface WindowSize {
   height: number
 }
 
-const useWindowSize = (): WindowSize => {
+export const useWindowSize = (): WindowSize => {
   const [windowSize, setWindowSize] = useState<WindowSize>({
-    width: globalThis.innerWidth,
-    height: globalThis.innerHeight,
+    width: 0,
+    height: 0,
   })
 
   useEffect(() => {
     const handleResize = () => {
       setWindowSize({
-        width: globalThis.innerWidth,
-        height: globalThis.innerHeight,
+        width: window.innerWidth,
+        height: window.innerHeight,
       })
     }
 
-    globalThis.addEventListener('resize', handleResize)
+    window.addEventListener('resize', handleResize)
     handleResize()
 
     return () => {
@@ -29,5 +29,3 @@ const useWindowSize = (): WindowSize => {
 
   return windowSize
 }
-
-export default useWindowSize
