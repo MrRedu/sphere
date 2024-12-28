@@ -1,8 +1,9 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
-import { SimpleAnime } from '../../types/anime.type'
 import { Chip } from '@/components/atoms/ui/Chip'
+
+import { SimpleAnime } from '../../types/anime.type'
 
 const AnimeCard = ({
   anime,
