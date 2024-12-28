@@ -20,9 +20,9 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 - [x] Implementar una vista de detalles que muestre la información completa del anime seleccionado, incluyendo: nombre, estado, episodios, score, categorías, temporada, studio y resumen
 - [x] Imagen del anime
-- [ ] Implementar sistema de animes favoritos
-- [ ] Implementar una funcionalidad que permita a los usuarios marcar animes como favoritos y guardarlos en el navegador (local storage).
-- [ ] Mostrar una lista de los animes favoritos guardados.
+- [x] Implementar sistema de animes favoritos
+- [x] Implementar una funcionalidad que permita a los usuarios marcar animes como favoritos y guardarlos en el navegador (local storage).
+- [x] Mostrar una lista de los animes favoritos guardados.
 - [ ] Permitir filtrar favoritos por estado o categoría.
 
 ## Diseño y Responsividad
