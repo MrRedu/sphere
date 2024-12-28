@@ -53,7 +53,7 @@ export const metadata: Metadata = {
         alt: ``,
       },
     ],
-    locale: 'es_MX',
+    locale: 'en-US',
     type: 'website',
   },
 }
