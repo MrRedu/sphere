@@ -181,7 +181,7 @@ export default function AnimePage({ params }: { params: Params }) {
         title={anime.title.english || anime.title.native}
       />
       {/* ⬇⬇⬇ Components */}
-      <Section className="grid gap-8 py-12 md:grid-cols-[320px_1fr]">
+      <Section className="grid min-h-screen gap-8 py-12 md:grid-cols-[320px_1fr]">
         <div className="flex w-full flex-col">
           <Tilt rotationFactor={8} isRevese>
             <div className="mx-auto aspect-[9/14] h-[420px] w-fit max-w-[320px]">
