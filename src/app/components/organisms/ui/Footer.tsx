@@ -1,55 +1,53 @@
 import Image from 'next/image'
 import Link from 'next/link'
 
+const links = [
+  {
+    href: 'https://github.com/MrRedu/sphere/blob/main/LICENSE',
+    label: 'License',
+  },
+  {
+    href: 'https://github.com/MrRedu',
+    label: 'Developer',
+  },
+  {
+    href: 'https://github.com/MrRedu/sphere/issues',
+    label: 'Contribute',
+  },
+  {
+    href: 'https://github.com/MrRedu/sphere',
+    label: 'Source Code',
+  },
+]
+
 export const Footer = () => {
   return (
     <footer className="w-full bg-black p-8">
-      <div className="flex w-full items-center justify-between gap-x-12 gap-y-6 text-center md:justify-between">
+      <div className="flex w-full flex-col justify-between gap-x-12 gap-y-6 text-center lg:flex-row lg:items-center lg:justify-between">
         <Image
           src="/logotype.svg"
           alt="Logotype Sphere"
-          width={220}
-          height={100}
+          width={800}
+          height={192}
           loading="lazy"
-          className="h-8"
+          className="h-48"
         />
 
-        <nav className="flex flex-wrap items-center gap-x-8 gap-y-2">
-          <Link
-            href="https://github.com/MrRedu/sphere/blob/main/LICENSE"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-light hover:text-primary/60 focus:text-primary/60"
-          >
-            License
-          </Link>
-          <Link
-            href="https://github.com/MrRedu/sphere/issues"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-light hover:text-primary/60 focus:text-primary/60"
-          >
-            Contribute
-          </Link>
-          <Link
-            href="https://github.com/MrRedu/sphere"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-light hover:text-primary/60 focus:text-primary/60"
-          >
-            GitHub
-          </Link>
-          <Link
-            href="https://github.com/MrRedu"
-            target="_blank"
-            rel="noopener noreferrer"
-            className="text-sm text-light hover:text-primary/60 focus:text-primary/60"
-          >
-            Developer
-          </Link>
+        <nav className="flex flex-col items-start gap-x-8 gap-y-2 lg:items-end">
+          {links.map(({ href, label }) => (
+            <Link
+              key={href}
+              href={href}
+              target="_blank"
+              rel="noopener noreferrer"
+              className="font-semibold text-light hover:text-primary/60 focus:text-primary/60"
+            >
+              {label}
+            </Link>
+          ))}
         </nav>
       </div>
-      <p className="mb-4 mt-4 block border-t border-primary pt-4 text-center text-sm text-gray-600 md:mb-0">
+      <p className="mb-4 mt-16 block border-t border-primary pt-4 text-center text-sm text-gray-600 md:mb-0">
         {new Date().getFullYear()} © Sphere
       </p>
     </footer>
