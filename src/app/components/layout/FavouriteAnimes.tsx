@@ -1,13 +1,15 @@
 'use client'
-import Section from '@/components/atoms/Section'
-import { useFavouriteAnimes } from '../../stores/animes/favourite-animes.store'
 import { gql, useQuery } from '@apollo/client'
-import { useEffect, useState } from 'react'
-import Gallery from '../../components/organisms/Gallery'
-import { Pagination } from '@/components/organisms/ui/Pagination'
-import { usePagination } from '@/hooks/usePagination'
 import Image from 'next/image'
 import Link from 'next/link'
+import { useEffect, useState } from 'react'
+
+import Section from '@/components/atoms/Section'
+import { Pagination } from '@/components/organisms/ui/Pagination'
+import { usePagination } from '@/hooks/usePagination'
+
+import Gallery from '../../components/organisms/Gallery'
+import { useFavouriteAnimes } from '../../stores/animes/favourite-animes.store'
 
 const GET_MY_FAVOURITE_ANIMES = gql`
   query GetMyFavouriteAnimes($ids: [Int], $page: Int, $perPage: Int) {
@@ -53,7 +55,7 @@ export const FavouriteAnimes = () => {
       setAnimeData(data.Page.media)
       setTotalPages(Math.ceil(favouriteAnimes.length / perPage))
     }
-  }, [data])
+  }, [data, favouriteAnimes])
 
   const paginationRange = getPaginationRange()
 

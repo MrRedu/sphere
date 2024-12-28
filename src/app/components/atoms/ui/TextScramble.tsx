@@ -1,6 +1,8 @@
 'use client'
+/* eslint-disable react-hooks/exhaustive-deps */
+
+import { motion, type MotionProps } from 'motion/react'
 import { type JSX, useEffect, useState } from 'react'
-import { motion, MotionProps } from 'motion/react'
 
 /**
  * A component that animates the scrambling of text.
@@ -76,18 +78,16 @@ export function TextScramble({
       let scrambled = ''
       const progress = step / steps
 
-      for (let i = 0; i < text.length; i++) {
-        if (text[i] === ' ') {
+      for (let index = 0; index < text.length; index++) {
+        if (text[index] === ' ') {
           scrambled += ' '
           continue
         }
 
-        if (progress * text.length > i) {
-          scrambled += text[i]
-        } else {
-          scrambled +=
-            characterSet[Math.floor(Math.random() * characterSet.length)]
-        }
+        scrambled +=
+          progress * text.length > index
+            ? text[index]
+            : characterSet[Math.floor(Math.random() * characterSet.length)]
       }
 
       setDisplayText(scrambled)

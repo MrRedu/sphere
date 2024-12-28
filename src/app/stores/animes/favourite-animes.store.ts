@@ -12,15 +12,13 @@ export const useFavouriteAnimes = create<FavouriteAnimesState>()(
       favouriteAnimes: [],
       toggleFavouriteAnime: (animeId: number) => {
         set(state => {
-          if (state.favouriteAnimes.includes(animeId)) {
-            return {
-              favouriteAnimes: state.favouriteAnimes.filter(
-                id => id !== animeId
-              ),
-            }
-          } else {
-            return { favouriteAnimes: [...state.favouriteAnimes, animeId] }
-          }
+          return state.favouriteAnimes.includes(animeId)
+            ? {
+                favouriteAnimes: state.favouriteAnimes.filter(
+                  id => id !== animeId
+                ),
+              }
+            : { favouriteAnimes: [...state.favouriteAnimes, animeId] }
         })
       },
     }),

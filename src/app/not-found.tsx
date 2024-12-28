@@ -1,7 +1,8 @@
-import Section from '@/components/atoms/Section'
 import { Undo } from 'lucide-react'
 import Image from 'next/image'
 import Link from 'next/link'
+
+import Section from '@/components/atoms/Section'
 import { TextScramble } from '@/components/atoms/ui/TextScramble'
 
 export default function NotFoundPage() {

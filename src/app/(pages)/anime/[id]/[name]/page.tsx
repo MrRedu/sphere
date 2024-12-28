@@ -26,9 +26,9 @@ import { Tilt } from '@/components/atoms/ui/Tilt'
 import { AnimeStats } from '@/components/molecules/AnimeStats'
 import { BannerImage } from '@/components/molecules/BannerImage'
 import { capitalize, formatDate } from '@/lib/utils'
-import { Anime, Media } from '#/src/app/types/anime.type'
 import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
 import { Button } from '#/src/app/components/molecules/ui/Button'
+import { Anime, Media } from '#/src/app/types/anime.type'
 
 const GET_ANIME_BY_ID = gql`
   query GetAnime($id: Int) {

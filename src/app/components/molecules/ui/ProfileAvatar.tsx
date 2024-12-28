@@ -1,10 +1,12 @@
 'use client'
-import { signOut, useSession } from 'next-auth/react'
-import Image from 'next/image'
-import Section from '@/components/atoms/Section'
-import { Button } from './Button'
 import { Fingerprint, LogOut, MailCheck } from 'lucide-react'
+import Image from 'next/image'
+import { signOut, useSession } from 'next-auth/react'
+
+import Section from '@/components/atoms/Section'
 import { hideEmail } from '#/src/app/lib/utils'
+
+import { Button } from './Button'
 
 export const ProfileAvatar = () => {
   const { data: session, status } = useSession()
