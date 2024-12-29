@@ -11,8 +11,8 @@ import { useMemo, useState } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 
-import { CarouselSkeleton } from '#/src/app/components/atoms/skeletons/CarouselSkeleton'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import { CarouselSkeleton } from '#/src/app/components/atoms/skeletons/CarouselSkeleton'
 
 import { SimpleAnime } from '../../types/anime.type'
 

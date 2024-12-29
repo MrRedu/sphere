@@ -2,8 +2,8 @@
 import { gql, useQuery } from '@apollo/client'
 
 import Section from '@/components/atoms/Section'
-import { Grid } from '@/components/organisms/Grid'
 import { GridSkeleton } from '@/components/atoms/skeletons/GridSkeleton'
+import { Grid } from '@/components/organisms/Grid'
 
 import { SimpleAnime } from '../../types/anime.type'
 

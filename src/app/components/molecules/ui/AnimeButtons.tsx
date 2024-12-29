@@ -3,9 +3,9 @@
 import { Heart, Play } from 'lucide-react'
 
 import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
+import { Trailer } from '#/src/app/types/anime.type'
 
 import { Button } from './Button'
-import { Trailer } from '#/src/app/types/anime.type'
 
 export const AnimeButtons = ({
   animeId,

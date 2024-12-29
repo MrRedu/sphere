@@ -1,6 +1,6 @@
-import styles from './Loading.module.css'
-
 import Section from '@/components/atoms/Section'
+
+import styles from './Loading.module.css'
 
 export default function LoadingPage() {
   return (

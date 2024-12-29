@@ -1,9 +1,10 @@
-import { ApolloError } from '@apollo/client'
+import { ApolloError, gql } from '@apollo/client'
+
 import { SimpleGallery } from '@/components/layout/SimpleGallery'
 import { TopRanking } from '@/components/layout/TopRanking'
 import { HeroSection } from '@/components/organisms/HeroSection'
+
 import { getClient } from './lib/client'
-import { gql } from '@apollo/client'
 import { SimpleAnime } from './types/anime.type'
 
 const POPULAR_ANIMES = gql`
