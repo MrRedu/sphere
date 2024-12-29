@@ -12,6 +12,13 @@ export interface SimpleAnime {
     color: string
   }
   genres: string[]
+  status?:
+    | 'FINISHED'
+    | 'RELEASING'
+    | 'NOT_YET_RELEASED'
+    | 'CANCELLED'
+    | 'HIATUS'
+  averageScore?: number
 }
 
 export interface Media {
