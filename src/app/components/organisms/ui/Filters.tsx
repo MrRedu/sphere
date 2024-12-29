@@ -3,7 +3,6 @@ import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
 
 import { BorderTrail } from '@/components/atoms/ui/BorderTail'
-
 import { SearchBar } from '@/components/molecules/ui/SearchBar'
 
 const genres = [
