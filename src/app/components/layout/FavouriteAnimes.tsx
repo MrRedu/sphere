@@ -3,15 +3,15 @@ import { gql, useQuery } from '@apollo/client'
 import { useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
+import Gallery from '@/components/organisms/Gallery'
 import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
-
-import Gallery from '@/components/organisms/Gallery'
 import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
+
+import { SimpleAnime } from '../../types/anime.type'
 import { FavouriteAnimesEmptyState } from '../atoms/skeletons/FavouriteAnimesEmptyState'
 import { GallerySkeleton } from '../atoms/skeletons/GallerySkeleton'
 import { Filters } from '../organisms/ui/Filters'
-import { SimpleAnime } from '../../types/anime.type'
 
 const GET_MY_FAVOURITE_ANIMES = gql`
   query GetMyFavouriteAnimes($ids: [Int], $page: Int, $perPage: Int) {
@@ -114,7 +114,7 @@ export const FavouriteAnimes = () => {
 
     // Reset a la primera página si cambian los filtros
     setCurrentPage(1)
-  }, [animeData, filters])
+  }, [animeData, filters, setCurrentPage])
 
   // if (loading) return <div className="h-screen w-screen animate-pulse" />
   // if (error) return <p>Error: {error.message}</p>

@@ -5,6 +5,7 @@ import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
 import { useOnlineStatus } from '@/hooks/useIsOnline'
+
 import { Button } from '../../molecules/ui/Button'
 
 export const Avatar = () => {
