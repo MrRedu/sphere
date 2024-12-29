@@ -60,7 +60,7 @@ const ANIMES = gql`
   }
 `
 export const SimpleGallery = () => {
-  const perPage = 9
+  const perPage = 12
   const [totalPages, setTotalPages] = useState(0)
   const [filters, setFilters] = useState({
     mediaGenre2: '',

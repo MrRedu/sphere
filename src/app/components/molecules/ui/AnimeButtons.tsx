@@ -5,12 +5,20 @@ import { Heart, Play } from 'lucide-react'
 import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
 
 import { Button } from './Button'
+import { Trailer } from '#/src/app/types/anime.type'
 
-export const AnimeButtons = ({ animeId }: { animeId: number }) => {
+export const AnimeButtons = ({
+  animeId,
+  trailer,
+}: {
+  animeId: number
+  trailer: Trailer
+}) => {
   const favouriteAnimes = useFavouriteAnimes(state => state.favouriteAnimes)
   const toggleFavouriteAnime = useFavouriteAnimes(
     state => state.toggleFavouriteAnime
   )
+  const trailerUrl = `https://www.youtube.com/watch?v=${trailer?.id || ''}`
   return (
     <div className="mt-4 flex items-center justify-center gap-4">
       <Button
@@ -28,7 +36,7 @@ export const AnimeButtons = ({ animeId }: { animeId: number }) => {
           <span className="hidden md:block">Like</span>
         )}
       </Button>
-      <Button className="md:flex-grow">
+      <Button href={trailerUrl} className="md:flex-grow">
         <Play />
         <span className="hidden md:block">See Trailer</span>
       </Button>

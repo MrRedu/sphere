@@ -92,7 +92,7 @@ const DropDown = ({ title, value, onChange, items }: DropDownProps) => {
             </option>
           ))}
         </select>
-        <ChevronDown className="absolute right-2.5 top-2.5 ml-1 h-5 w-5 text-slate-700" />
+        <ChevronDown className="pointer-events-none absolute right-2.5 top-2.5 ml-1 h-5 w-5 text-primary" />
       </div>
     </div>
   )
