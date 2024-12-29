@@ -102,9 +102,13 @@ export const SimpleGallery = () => {
     <Section className="flex w-full flex-col gap-8 py-16">
       <h2 className="text-3xl font-bold">All Animes</h2>
       <Filters filters={filters} onFilterChange={setFilters} />
-      {/* <Suspense fallback={<GallerySkeleton />}> */}
-      {loading || error ? <GallerySkeleton /> : <Gallery animes={animes} />}
-      {/* </Suspense> */}
+      {loading || error ? (
+        <GallerySkeleton />
+      ) : (
+        <Suspense fallback={<GallerySkeleton />}>
+          <Gallery animes={animes} />
+        </Suspense>
+      )}
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}

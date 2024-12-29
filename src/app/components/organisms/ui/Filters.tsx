@@ -6,6 +6,7 @@ import { BorderTrail } from '@/components/atoms/ui/BorderTail'
 import { SearchBar } from '@/components/molecules/ui/SearchBar'
 
 const genres = [
+  { label: 'All', value: '' },
   { label: 'Action', value: 'Action' },
   { label: 'Adventure', value: 'Adventure' },
   { label: 'Comedy', value: 'Comedy' },
@@ -27,6 +28,7 @@ const genres = [
 ]
 
 const statuses = [
+  { label: 'All', value: '' },
   { label: 'Finished', value: 'FINISHED' },
   { label: 'Releasing', value: 'RELEASING' },
   { label: 'Not yet released', value: 'NOT_YET_RELEASED' },
@@ -83,9 +85,6 @@ const DropDown = ({ title, value, onChange, items }: DropDownProps) => {
           onChange={onChange}
           className="w-full cursor-pointer appearance-none rounded-md border border-primary/30 bg-dark/70 py-2 pl-3 pr-8 text-sm text-slate-200 focus:outline-none"
         >
-          <option value="" disabled>
-            All
-          </option>
           {items.map(item => (
             <option key={item.value} value={item.value || ''}>
               {item.label}

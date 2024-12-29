@@ -27,19 +27,19 @@ export const metadata: Metadata = {
   ],
   creator: 'Mr Redu',
   description:
-    'Bienvenido a Sphere, tu portal definitivo al fascinante universo del anime. Con nuestra aplicación web, podrás explorar una vasta colección de animes. Busca tus series favoritas por nombre, puntuación o categoría y descubre nuevos títulos que se ajusten a tus gustos. Además, podrás guardar tus animes preferidos en una lista de favoritos, facilitando su acceso en cualquier momento. Con una interfaz intuitiva y responsiva, Sphere te ofrece una experiencia fluida y agradable mientras navegas por el mundo del anime. Únete a nosotros y transforma tu forma de disfrutar el anime.',
+    'Welcome to Sphere, your ultimate portal to the fascinating universe of anime. With our web application, you can explore a vast collection of anime. Search your favorite series by name, rating or category and discover new titles that match your tastes. In addition, you can save your favorite anime in a favorites list, making it easy to access at any time. With an intuitive and responsive interface, Sphere offers you a smooth and enjoyable experience as you navigate through the world of anime. Join us and transform the way you enjoy anime.',
   keywords: [
     'Sphere',
     'anime',
     'AniList',
-    'aplicación de anime',
-    'seguimiento de anime',
-    'búsqueda de anime',
+    'anime app',
+    'anime tracking',
+    'anime search',
   ],
   openGraph: {
-    title: 'Sphere | Tu Portal al Universo del Anime',
-    description: `Tu portal definitivo al fascinante universo del anime. Con nuestra aplicación web, podrás explorar una vasta colección de animes. Busca tus series favoritas por nombre, puntuación o categoría y descubre nuevos títulos que se ajusten a tus gustos. Además, podrás guardar tus animes preferidos en una lista de favoritos, facilitando su acceso en cualquier momento. Con una interfaz intuitiva y responsiva, Sphere te ofrece una experiencia fluida y agradable mientras navegas por el mundo del anime. Únete a nosotros y transforma tu forma de disfrutar el anime.`,
-    url: '',
+    title: 'Sphere | Your gateway to the anime universe',
+    description: `Your ultimate portal to the fascinating universe of anime. With our web application, you can explore a vast collection of anime. Search your favorite series by name, rating or category and discover new titles that match your tastes. In addition, you can save your favorite anime in a favorites list, making it easy to access at any time. With an intuitive and responsive interface, Sphere offers you a smooth and enjoyable experience as you navigate through the world of anime. Join us and transform the way you enjoy anime`,
+    url: 'https://sphere-mrredu.vercel.app/',
     siteName: 'Sphere',
     images: [
       {

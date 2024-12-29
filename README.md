@@ -23,7 +23,7 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 - [x] Implementar sistema de animes favoritos
 - [x] Implementar una funcionalidad que permita a los usuarios marcar animes como favoritos y guardarlos en el navegador (local storage).
 - [x] Mostrar una lista de los animes favoritos guardados.
-- [ ] Permitir filtrar favoritos por estado o categoría.
+- [x] Permitir filtrar favoritos por estado o categoría.
 
 ## Diseño y Responsividad
 
@@ -36,8 +36,8 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 ## Validaciones y manejo de errores
 
-- [ ] Asegurar que todas las entradas del usuario y respuestas de la API sean validadas correctamente.
-- [ ] Manejar estados de carga y errores de manera adecuada.
+- [x] Asegurar que todas las entradas del usuario y respuestas de la API sean validadas correctamente.
+- [x] Manejar estados de carga y errores de manera adecuada.
 - [ ] Implementar mensajes de error informativos y amigables
 
 ## Requisitos Técnicos
