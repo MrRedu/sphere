@@ -1,8 +1,10 @@
 'use client'
 import { ChevronDown } from 'lucide-react'
 import { useState } from 'react'
+
 import { BorderTrail } from '@/components/atoms/ui/BorderTail'
-import { SearchBar } from '../../molecules/ui/SearchBar'
+
+import { SearchBar } from '@/components/molecules/ui/SearchBar'
 
 const genres = [
   { label: 'Action', value: 'Action' },

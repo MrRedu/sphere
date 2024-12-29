@@ -1,7 +1,9 @@
 'use client'
 
-import { useFavouriteAnimes } from '#/src/app/stores/animes/favourite-animes.store'
 import { Heart, Play } from 'lucide-react'
+
+import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
+
 import { Button } from './Button'
 
 export const AnimeButtons = ({ animeId }: { animeId: number }) => {

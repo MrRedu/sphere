@@ -4,8 +4,8 @@ import { gql, useQuery } from '@apollo/client'
 import { useState } from 'react'
 
 import Section from '@/components/atoms/Section'
-import { Swiper } from '@/components/organisms/Swiper'
 import { BannerImage } from '@/components/molecules/BannerImage'
+import { Swiper } from '@/components/organisms/Swiper'
 
 import { SimpleAnime } from '../../types/anime.type'
 import { InformationActiveBanner } from '../molecules/InformationActiveBanner'

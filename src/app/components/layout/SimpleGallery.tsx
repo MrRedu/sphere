@@ -3,11 +3,11 @@ import { gql, useQuery } from '@apollo/client'
 import { lazy, Suspense, useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
+import { Filters } from '@/components/organisms/ui/Filters'
 import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
 
 import { SimpleAnime } from '../../types/anime.type'
-import { Filters } from '@/components/organisms/ui/Filters'
 
 const Gallery = lazy(() => import('@/components/organisms/Gallery'))
 

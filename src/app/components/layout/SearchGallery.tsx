@@ -6,9 +6,9 @@ import Section from '@/components/atoms/Section'
 import Gallery from '@/components/organisms/Gallery'
 import { SimpleAnime } from '#/src/app/types/anime.type'
 
-import { usePagination } from '../../hooks/usePagination'
-import { Pagination } from '../organisms/ui/Pagination'
-import { AnimatedGroup } from '../atoms/ui/AnimatedGroup'
+import { usePagination } from '@/hooks/usePagination'
+import { AnimatedGroup } from '@/components/atoms/ui/AnimatedGroup'
+import { Pagination } from '@/components/organisms/ui/Pagination'
 
 interface Data {
   Page: {
