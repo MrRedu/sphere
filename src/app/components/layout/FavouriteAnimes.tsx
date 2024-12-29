@@ -1,7 +1,6 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
@@ -14,7 +13,7 @@ import { useFavouriteAnimes } from '../../stores/animes/favourite-animes.store'
 const GET_MY_FAVOURITE_ANIMES = gql`
   query GetMyFavouriteAnimes($ids: [Int], $page: Int, $perPage: Int) {
     Page(page: $page, perPage: $perPage) {
-      media(id_in: $ids, type: ANIME) {
+      media(id_in: $ids) {
         id
         title {
           english

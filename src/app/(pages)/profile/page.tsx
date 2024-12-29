@@ -1,10 +1,10 @@
 import { FavouriteAnimes } from '@/components/layout/FavouriteAnimes'
-import { ProfileAvatar } from '@/components/molecules/ui/ProfileAvatar'
+import { UserProfile } from '@/components/molecules/ui/UserProfile'
 
 export default function ProfilePage() {
   return (
     <>
-      <ProfileAvatar />
+      <UserProfile />
       <FavouriteAnimes />
     </>
   )

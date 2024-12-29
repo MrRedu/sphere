@@ -22,7 +22,7 @@ const Gallery = ({ animes }: { animes: SimpleAnime[] }) => {
         <Link
           key={anime.id}
           href={`/anime/${anime.id}/${anime.title.english || anime.title.native}`}
-          className="relative flex h-[220px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-sm bg-dark/70 p-4 transition-colors duration-500 ease-in-out lg:bg-transparent lg:hover:bg-dark/70"
+          className="relative flex h-[220px] w-full cursor-pointer flex-col justify-end overflow-hidden rounded-sm bg-black/70 p-4 transition-colors duration-500 ease-in-out lg:bg-transparent lg:hover:bg-black/70"
         >
           <Image
             src={anime.bannerImage || '/placeholder_300x450.jpg'}

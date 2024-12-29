@@ -1,38 +1,12 @@
-'use client'
-import { gql, useQuery } from '@apollo/client'
-import {
-  CirclePlay,
-  Clapperboard,
-  Clock,
-  FileVideo,
-  Globe,
-  Heart,
-  MoveDown,
-  MoveUp,
-  Play,
-} from 'lucide-react'
-import Image from 'next/image'
-import Link from 'next/link'
-import { useParams } from 'next/navigation'
-import { ReactCountryFlag } from 'react-country-flag'
+import { gql } from '@apollo/client'
 
-import Section from '@/components/atoms/Section'
-import { Chip } from '@/components/atoms/ui/Chip'
-import { Rating } from '@/components/atoms/ui/Rating'
-import { RichText } from '@/components/atoms/ui/RichText'
-import { Spotlight } from '@/components/atoms/ui/Spotlight'
-import { TextLoop } from '@/components/atoms/ui/TextLoop'
-import { Tilt } from '@/components/atoms/ui/Tilt'
-import { AnimeStats } from '@/components/molecules/AnimeStats'
-import { BannerImage } from '@/components/molecules/BannerImage'
-import { capitalize, formatDate } from '@/lib/utils'
-import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
-import { Button } from '#/src/app/components/molecules/ui/Button'
-import { Anime, Media } from '#/src/app/types/anime.type'
+import { getClient } from '@/lib/client'
+import { Anime } from '#/src/app/components/layout/Anime'
+import { Anime as AnimeInterface } from '#/src/app/types/anime.type'
 
 const GET_ANIME_BY_ID = gql`
   query GetAnime($id: Int) {
-    Media(id: $id, type: ANIME) {
+    Media(id: $id) {
       id
       title {
         english
@@ -96,193 +70,62 @@ const GET_ANIME_BY_ID = gql`
   }
 `
 
-type Params = Promise<{ slug: string[] }>
-
-export default function AnimePage({ params }: { params: Params }) {
-  const { id, name } = useParams()
-  const { data, loading, error } = useQuery<Media>(GET_ANIME_BY_ID, {
-    variables: { id: Number(id) },
+async function loadData(id: number) {
+  const { data } = await getClient().query({
+    query: GET_ANIME_BY_ID,
+    variables: { id: id },
   })
-  const favouriteAnimes = useFavouriteAnimes(state => state.favouriteAnimes)
-  const toggleFavouriteAnime = useFavouriteAnimes(
-    state => state.toggleFavouriteAnime
-  )
 
-  if (loading) return <p>Loading...</p>
-  if (error) return <p>Error: {error.message}</p>
+  return data
+}
 
-  const anime = data?.Media as Anime
-  const episodesInformation = [
-    {
-      id: 1,
-      field: 'Episodes',
-      data: anime.episodes,
-      icon: <FileVideo size={14} />,
-    },
-    {
-      id: 2,
-      field: 'Episode Duration',
-      data: anime.duration,
-      icon: <Clock size={14} />,
-    },
-    {
-      id: 3,
-      field: 'Origin',
-      data: (
-        <ReactCountryFlag
-          countryCode={anime.countryOfOrigin}
-          svg
-          style={{ width: '2em', height: '2em' }}
-        />
-      ),
-      icon: <Globe size={14} />,
-    },
-  ]
-  const formatInformation = [
-    {
-      id: 1,
-      // field: 'Status',
-      data: capitalize(anime.status),
-      icon:
-        anime.status === 'FINISHED' ? <Heart size={14} /> : <Play size={14} />,
-    },
-    {
-      id: 2,
-      // field: 'Format',
-      data: capitalize(anime.format),
-      icon: <Clapperboard size={14} />,
-    },
-    {
-      id: 3,
-      // field: 'Type',
-      data: capitalize(anime.type),
-      icon: <CirclePlay size={14} />,
-    },
-  ]
-  const datesInformation = [
-    {
-      id: 1,
-      // field: 'Start Date',
-      data: formatDate(
-        `${anime.startDate?.month}/${anime.startDate?.day}/${anime.startDate?.year}`
-      ),
-      icon: <MoveUp size={14} />,
-    },
-    {
-      id: 2,
-      // field: 'End Date',
-      data: formatDate(
-        `${anime.endDate?.month}/${anime.endDate?.day}/${anime.endDate?.year}`
-      ),
-      icon: <MoveDown size={14} />,
-    },
-  ]
+export async function generateMetadata({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
+  const data = await loadData(Number(id))
+  const anime = data.Media as AnimeInterface
 
-  return (
-    <>
-      {/* Overlay */}
-      <div className="absolute inset-0 -z-10 bg-black/50" />
-      <BannerImage
-        banner={anime.bannerImage}
-        title={anime.title.english || anime.title.native}
-      />
-      {/* ⬇⬇⬇ Components */}
-      <Section className="grid min-h-screen gap-8 py-12 md:grid-cols-[320px_1fr]">
-        <div className="flex w-full flex-col">
-          <Tilt rotationFactor={8} isRevese>
-            <div className="mx-auto aspect-[9/14] h-[420px] w-fit max-w-[320px]">
-              <Spotlight
-                className={`z-10 from-white/50 via-white/20 to-white/10 blur-2xl`}
-                size={248}
-                springOptions={{
-                  stiffness: 26.7,
-                  damping: 4.1,
-                  mass: 0.2,
-                }}
-              />
-              <Image
-                src={anime.coverImage.extraLarge || '/placeholder_300x450.jpg'}
-                alt={`Cover ${anime.title.english || anime.title.native || 'Unknown'}`}
-                width={1280}
-                height={720}
-                className={`aspect-[9/14] rounded object-cover mix-blend-normal`}
-                quality={80}
-                style={{
-                  width: '100%',
-                  height: '100%',
-                  aspectRatio: '9/14',
-                }}
-                priority={true}
-                placeholder="empty"
-              />
-            </div>
-          </Tilt>
-          <div className="mt-4 flex items-center justify-center gap-4">
-            <Button
-              className="md:flex-grow"
-              onClick={() => toggleFavouriteAnime(anime.id)}
-            >
-              {favouriteAnimes?.includes(anime.id) ? (
-                <Heart fill="currentColor" />
-              ) : (
-                <Heart />
-              )}
-              {favouriteAnimes?.includes(anime.id) ? (
-                <span className="hidden md:block">Liked</span>
-              ) : (
-                <span className="hidden md:block">Like</span>
-              )}
-            </Button>
-            <Button className="md:flex-grow">
-              <Play />
-              <span className="hidden md:block">See Trailer</span>
-            </Button>
-          </div>
-        </div>
-        <div className="flex flex-col gap-4">
-          {/* Title */}
-          <TextLoop className="text-wrap">
-            {anime.title?.english && (
-              <h2
-                className={`scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl`}
-              >
-                {anime.title.english}
-              </h2>
-            )}
-            {anime.title?.native && (
-              <h2
-                className={`scroll-m-20 text-3xl font-bold tracking-tight lg:text-4xl`}
-              >
-                {anime.title.native}
-              </h2>
-            )}
-          </TextLoop>
-          {/* Genres */}
-          <div className="flex flex-wrap gap-2">
-            {anime.genres.map(genre => (
-              <Link key={genre} href={`/animes/genre/${genre}`}>
-                <Chip key={genre}>
-                  <span className="text-sm font-semibold">{genre}</span>
-                </Chip>
-              </Link>
-            ))}
-          </div>
-          {/* Episodes, Episodes Duration, Origin */}
-          <AnimeStats stats={episodesInformation} />
-          {/* Rating */}
-          <Rating average={anime.averageScore} />
-          {/* Format & Type */}
-          <AnimeStats stats={formatInformation} />
-          {/* Start Date & End Date */}
-          <AnimeStats stats={datesInformation} />
-          {/* Description */}
-          <RichText content={anime.description} />
-        </div>
-        {/* 
-        <pre>
-          <code>{JSON.stringify(anime, undefined, 2)}</code>
-        </pre> */}
-      </Section>
-    </>
-  )
+  return {
+    title: anime.title.english || anime.title.native,
+    description: anime.description,
+    keywords: [...anime.genres],
+    openGraph: {
+      description: anime.description,
+      url: anime.siteUrl,
+      siteName: `${anime.title.english || anime.title.native} | Sphere`,
+      images: [
+        {
+          url: anime.bannerImage || anime.coverImage.large,
+          width: 800,
+          height: 600,
+          alt: `${anime.title.english || anime.title.native} image`,
+        },
+        {
+          url: anime.bannerImage || anime.coverImage.large,
+          width: 1800,
+          height: 1600,
+          alt: `${anime.title.english || anime.title.native} image`,
+        },
+      ],
+      locale: 'en-US',
+      type: 'website',
+    },
+  }
+}
+
+export default async function AnimePage({
+  params,
+}: {
+  params: Promise<{ id: string }>
+}) {
+  const { id } = await params
+  const data = await loadData(Number(id))
+  const anime = data.Media as AnimeInterface
+  // if (loading) return <p>Loading...</p>
+  // if (error) return <p>Error: {error.message}</p>
+
+  return <Anime anime={anime} />
 }

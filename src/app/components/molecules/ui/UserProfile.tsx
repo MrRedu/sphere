@@ -8,7 +8,7 @@ import { hideEmail } from '#/src/app/lib/utils'
 
 import { Button } from './Button'
 
-export const ProfileAvatar = () => {
+export const UserProfile = () => {
   const { data: session, status } = useSession()
   const fistName = session?.user?.name?.split(' ')[0] || 'Name'
   const lastName = session?.user?.name?.split(' ')[1] || 'LastName'
