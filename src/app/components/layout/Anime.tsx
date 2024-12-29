@@ -173,10 +173,6 @@ export const Anime = ({ anime }: { anime: AnimeInterface }) => {
           {/* Description */}
           <RichText content={anime.description} />
         </div>
-
-        <pre>
-          <code>{JSON.stringify(anime, undefined, 2)}</code>
-        </pre>
       </Section>
     </>
   )

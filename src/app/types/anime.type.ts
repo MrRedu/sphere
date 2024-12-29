@@ -46,7 +46,6 @@ export interface Anime {
   duration: number
   volumes: null
   trailer: Trailer
-  characters: Characters
 }
 export interface Title {
   __typename: string
@@ -74,49 +73,4 @@ export interface Trailer {
   id: string
   site: string
   thumbnail: string
-}
-export interface Characters {
-  __typename: string
-  nodes: Character[]
-}
-
-export interface Character {
-  __typename: NodeTypename
-  id: number
-  name: Name
-  gender: Gender | null
-  age: null | string
-  isFavourite: boolean
-  image: Image
-  siteUrl: string
-}
-
-export enum NodeTypename {
-  Character = 'Character',
-}
-
-export enum Gender {
-  Female = 'Female',
-  Male = 'Male',
-}
-
-export interface Image {
-  __typename: ImageTypename
-  large: string
-  medium: string
-}
-
-export enum ImageTypename {
-  CharacterImage = 'CharacterImage',
-}
-
-export interface Name {
-  __typename: NameTypename
-  full: string
-  native: string
-  userPreferred: string
-}
-
-export enum NameTypename {
-  CharacterName = 'CharacterName',
 }

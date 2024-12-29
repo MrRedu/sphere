@@ -48,24 +48,6 @@ const GET_ANIME_BY_ID = gql`
         site
         thumbnail
       }
-      characters {
-        nodes {
-          id
-          name {
-            full
-            native
-            userPreferred
-          }
-          gender
-          age
-          isFavourite
-          image {
-            large
-            medium
-          }
-          siteUrl
-        }
-      }
     }
   }
 `

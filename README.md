@@ -1,36 +1,133 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+<p align="center">
+   <br/>
+   <a href="https://sphere-mrredu.vercel.app/" target="_blank">
+    <img src="./public/logo.svg" width="250" alt="">
+   </a>
+   <h3 align="center">Sphere</h3>
+   <p align="center">
+    嘘を言わないで
+   </p>
+</p>
 
-## Getting Started
+## Descripción
 
-First, run the development server:
+Aplicación web que permite a los usuarios explorar el universo de Anilist API, ver lista de animes, detalles de los animes por cada card. Debes integrar la API de Anilist API para obtener toda la información necesaria.
+
+## Tabla de Contenidos
+
+<details open>
+  <summary>Tabla de contenidos</summary>
+  <ul>
+    <li><a href="#-características">Características</a></li>
+    <li><a href="#-tecnologías">Tecnologías</a></li>
+    <li><a href="#-instalación">Instalación</a></li>
+    <li><a href="#-uso">Uso</a></li>
+    <li><a href="#-contribución">Contribución</a></li>
+    <li><a href="#-licencia">Licencia</a></li>
+  </ul>
+</details>
+
+## Características
+
+- Renderizado del lado del servidor (SSR) y generación de sitios estáticos (SSG).
+- Enrutamiento basado en archivos.
+- Optimización automática de imágenes.
+
+## Tecnologías
+
+![Next.js][Next.js]![GraphQL][GraphQL]![Zustand][Zustand] <br>
+![React.js][React.js]![TypeScript][TypeScript]![TailwindCSS][TailwindCSS]<br>
+![Framer][Framer] <br>
+![ESLint][ESLint]![Prettier][Prettier]<br>
+
+## Instalación
+
+Instrucciones paso a paso para instalar el proyecto en un entorno local.
+
+1. Clona el repositorio:
+
+```bash
+git clone https://github.com/MrRedu/sphere.git
+```
+
+2. Navega al directorio del proyecto:
+
+```bash
+cd sphere
+```
+
+3. Instala las dependencias:
+
+```bash
+npm install
+```
+
+4. Configura las variables de entorno:
+
+   4.1 Crea un archivo `.env` en la raíz del proyecto:
+
+   ```bash
+   touch .env
+   ```
+
+   4.2 Rellena los campos del archivo `.env` utilizando el formato basado en el archivo `.env.template`:
+
+   ```bash
+   # Anilist API
+   ANILIST_API_URL=https://graphql.anilist.co
+
+   # Next Auth Provider
+   NEXTAUTH_URL='http://localhost:3000'
+   NEXTAUTH_SECRET='<openssl rand -base64 32>'
+
+   # Google Auth Provider
+   GOOGLE_CLIENT_ID=<string>
+   GOOGLE_CLIENT_SECRET=<string>
+   ```
+
+## Uso
+
+Instrucciones sobre cómo ejecutar la aplicación localmente.
+
+1. Para iniciar el servidor de desarrollo:
 
 ```bash
 npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
 ```
 
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
+2. Abre tu navegador y visita `http://localhost:3000` para ver la aplicación en acción.
 
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
+## Contribución
 
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
+Instrucciones sobre cómo contribuir al proyecto.
 
-## Learn More
+1. Haz un fork del repositorio.
+2. Crea una nueva rama (`git checkout -b nombre-de-la-rama`).
+3. Realiza tus cambios y haz un commit (`git commit -m 'Añadir una nueva característica'`).
+4. Envía tus cambios (`git push origin nombre-de-la-rama`).
+5. Abre un Pull Request.
 
-To learn more about Next.js, take a look at the following resources:
+## Licencia
 
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
+Sphere está bajo la [Licencia MIT](LICENSE).
 
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
+![Logotipo](./public/logotype.svg)
 
-## Deploy on Vercel
+<!-- -->
+<!--  -->
+<!--   -->
+<!--    -->
+<!--     -->
+<!--      -->
 
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
+<!-- MARKDOWN LINKS-->
 
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+[Next.js]: https://img.shields.io/badge/next.js-000000?style=for-the-badge&logo=nextdotjs&logoColor=white
+[React.js]: https://img.shields.io/badge/React-20232A?style=for-the-badge&logo=react&logoColor=61DAFB
+[Zustand]: https://img.shields.io/badge/Zustand-3e432d?style=for-the-badge&logo=zustand&logoColor=white
+[TailwindCSS]: https://img.shields.io/badge/TailwindCSS-06b6d4?style=for-the-badge&logo=tailwind-css&logoColor=white
+[ESLint]: https://img.shields.io/badge/eslint-4b32c3?style=for-the-badge&logo=eslint&logoColor=white
+[Prettier]: https://img.shields.io/badge/prettier-f7b93e?style=for-the-badge&logo=prettier&logoColor=white
+[Framer]: https://img.shields.io/badge/framer-0055FF?style=for-the-badge&logo=framer&logoColor=white
+[GraphQL]: https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white
+[TypeScript]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white

@@ -3,7 +3,7 @@ import Image from 'next/image'
 export const FavouriteAnimesEmptyState = () => {
   return (
     <div className="flex flex-col items-center justify-center gap-8 py-12 md:flex-row md:gap-32">
-      <div className="w-full max-w-[400px]">
+      <div className="w-full max-w-[400px] text-center md:text-left">
         <p className="mb-4 text-3xl font-bold">
           {`You don't have any favourite animes yet.`}
         </p>
