@@ -1,6 +1,6 @@
 import { gql } from '@apollo/client'
-import { getClient } from '@/lib/client'
 
+import { getClient } from '@/lib/client'
 import { Anime } from '#/src/app/components/layout/Anime'
 import { Anime as AnimeInterface } from '#/src/app/types/anime.type'
 

@@ -1,9 +1,9 @@
 'use client'
 import { Search } from 'lucide-react'
+import { useRouter } from 'next/navigation'
+import { useState } from 'react'
 
 import { BorderTrail } from '@/components/atoms/ui/BorderTail'
-import { useState } from 'react'
-import { useRouter } from 'next/navigation'
 
 export const SearchBar = () => {
   const [query, setQuery] = useState<string>('')

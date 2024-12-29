@@ -1,10 +1,11 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
+import { Suspense, useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
-import { SimpleAnime } from '#/src/app/types/anime.type'
 import Gallery from '@/components/organisms/Gallery'
-import { Suspense, useEffect, useState } from 'react'
+import { SimpleAnime } from '#/src/app/types/anime.type'
+
 import { usePagination } from '../../hooks/usePagination'
 import { Pagination } from '../organisms/ui/Pagination'
 

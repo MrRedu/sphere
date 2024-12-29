@@ -1,12 +1,13 @@
 'use client'
 
-import { Suspense, useEffect, useState } from 'react'
-import Section from '../atoms/Section'
-import { Pagination } from '../organisms/ui/Pagination'
-import Gallery from '../organisms/Gallery'
 import { gql, useQuery } from '@apollo/client'
+import { Suspense, useEffect, useState } from 'react'
+
 import { usePagination } from '../../hooks/usePagination'
 import { SimpleAnime } from '../../types/anime.type'
+import Section from '../atoms/Section'
+import Gallery from '../organisms/Gallery'
+import { Pagination } from '../organisms/ui/Pagination'
 
 interface Data {
   Page: {

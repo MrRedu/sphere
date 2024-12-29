@@ -1,15 +1,3 @@
-import Image from 'next/image'
-import { Anime as AnimeInterface } from '../../types/anime.type'
-import Section from '../atoms/Section'
-import { Spotlight } from '../atoms/ui/Spotlight'
-import { Tilt } from '../atoms/ui/Tilt'
-import { BannerImage } from '../molecules/BannerImage'
-import { TextLoop } from '../atoms/ui/TextLoop'
-import Link from 'next/link'
-import { Chip } from '../atoms/ui/Chip'
-import { AnimeStats } from '../molecules/AnimeStats'
-import { Rating } from '../atoms/ui/Rating'
-import { RichText } from '../atoms/ui/RichText'
 import {
   CirclePlay,
   Clapperboard,
@@ -21,8 +9,21 @@ import {
   MoveUp,
   Play,
 } from 'lucide-react'
-import ReactCountryFlag from 'react-country-flag'
+import Image from 'next/image'
+import Link from 'next/link'
+import { ReactCountryFlag } from 'react-country-flag'
+
 import { capitalize, formatDate } from '../../lib/utils'
+import { Anime as AnimeInterface } from '../../types/anime.type'
+import Section from '../atoms/Section'
+import { Chip } from '../atoms/ui/Chip'
+import { Rating } from '../atoms/ui/Rating'
+import { RichText } from '../atoms/ui/RichText'
+import { Spotlight } from '../atoms/ui/Spotlight'
+import { TextLoop } from '../atoms/ui/TextLoop'
+import { Tilt } from '../atoms/ui/Tilt'
+import { AnimeStats } from '../molecules/AnimeStats'
+import { BannerImage } from '../molecules/BannerImage'
 
 export const Anime = ({ anime }: { anime: AnimeInterface }) => {
   const episodesInformation = [
