@@ -8,7 +8,7 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 - [x] Página de inicio con lista de animes
 - [x] Consumir la API de Anilist API para obtener y mostrar una lista de animes.
-- [+-] Implementar paginación para manejar grandes cantidades de datos.
+- [+] Implementar paginación para manejar grandes cantidades de datos.
 - [ ] Mostrar información básica de cada anime (nombre, formato, episodios categorías, imagen, score y status).
 
 ## Barra de búsqueda multifuncional

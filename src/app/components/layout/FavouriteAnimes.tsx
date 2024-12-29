@@ -1,7 +1,6 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
 import Image from 'next/image'
-import Link from 'next/link'
 import { useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'

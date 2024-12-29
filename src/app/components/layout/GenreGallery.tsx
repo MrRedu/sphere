@@ -1,12 +1,12 @@
 'use client'
-import { gql, useQuery } from '@apollo/client'
 
-import Section from '@/components/atoms/Section'
-import { SimpleAnime } from '#/src/app/types/anime.type'
-import Gallery from '@/components/organisms/Gallery'
 import { Suspense, useEffect, useState } from 'react'
-import { usePagination } from '../../hooks/usePagination'
+import Section from '../atoms/Section'
 import { Pagination } from '../organisms/ui/Pagination'
+import Gallery from '../organisms/Gallery'
+import { gql, useQuery } from '@apollo/client'
+import { usePagination } from '../../hooks/usePagination'
+import { SimpleAnime } from '../../types/anime.type'
 
 interface Data {
   Page: {
@@ -19,10 +19,10 @@ interface Data {
   }
 }
 
-const GET_ANIMES_BY_QUERY = gql`
-  query GetAnimesByQuery($search: String, $page: Int, $perPage: Int) {
-    Page(page: $page, perPage: $perPage) {
-      media(search: $search, sort: POPULARITY_DESC) {
+const GET_ANIMES_BY_GENRE = gql`
+  query GetAnimesByGenre($genre: String!, $perPage: Int, $page: Int) {
+    Page(perPage: $perPage, page: $page) {
+      media(genre: $genre, sort: POPULARITY_DESC) {
         id
         title {
           english
@@ -45,14 +45,14 @@ const GET_ANIMES_BY_QUERY = gql`
   }
 `
 
-export const SearchGallery = ({ query }: { query: string }) => {
+export const GenreGallery = ({ genre }: { genre: string }) => {
   const perPage = 9
   const [totalPages, setTotalPages] = useState<number>(0)
   const { currentPage, setCurrentPage, getPaginationRange } =
     usePagination(totalPages)
 
-  const { data, loading, error } = useQuery<Data>(GET_ANIMES_BY_QUERY, {
-    variables: { search: query, page: currentPage, perPage },
+  const { data, loading, error } = useQuery<Data>(GET_ANIMES_BY_GENRE, {
+    variables: { genre, page: currentPage, perPage },
   })
 
   useEffect(() => {
@@ -69,7 +69,7 @@ export const SearchGallery = ({ query }: { query: string }) => {
 
   return (
     <Section className="flex w-full flex-col gap-8 py-16">
-      <h2 className="text-3xl font-bold">{query}</h2>
+      <h2 className="text-3xl font-bold">{genre}</h2>
       <Suspense fallback={<div>Loading Gallery...</div>}>
         <Gallery animes={animes} />
       </Suspense>

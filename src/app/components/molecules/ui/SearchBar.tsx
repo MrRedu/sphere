@@ -46,7 +46,7 @@ export const SearchBar = () => {
             name="query"
             value={query}
             onChange={handleChange}
-            className={`w-full rounded-md border border-primary bg-transparent p-2 pr-12 text-sm font-semibold text-primary shadow-lg transition duration-300 placeholder:text-slate-400`}
+            className={`w-full rounded-md border border-primary bg-transparent p-2 pr-12 text-sm font-semibold text-primary shadow-lg transition duration-300 placeholder:text-slate-400 focus:outline-none`}
             placeholder="ONE PIECE, Trigun, One Punch Man..."
           />
           <button

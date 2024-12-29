@@ -1,5 +1,4 @@
 'use client'
-import Section from '@/components/atoms/Section'
 
 import { useParams } from 'next/navigation'
 
@@ -10,9 +9,5 @@ type Params = Promise<{ slug: string[] }>
 export default function AnimesByQueryPage({ params }: { params: Params }) {
   const { query } = useParams()
 
-  return (
-    <Section>
-      <SearchGallery query={query as string} />
-    </Section>
-  )
+  return <SearchGallery query={query as string} />
 }
