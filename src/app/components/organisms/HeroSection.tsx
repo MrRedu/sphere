@@ -5,7 +5,7 @@ import { useState } from 'react'
 
 import Section from '@/components/atoms/Section'
 import { Swiper } from '@/components/organisms/Swiper'
-import { BannerImage } from '#/src/app/components/molecules/BannerImage'
+import { BannerImage } from '@/components/molecules/BannerImage'
 
 import { SimpleAnime } from '../../types/anime.type'
 import { InformationActiveBanner } from '../molecules/InformationActiveBanner'

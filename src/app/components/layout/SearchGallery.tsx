@@ -8,6 +8,7 @@ import { SimpleAnime } from '#/src/app/types/anime.type'
 
 import { usePagination } from '../../hooks/usePagination'
 import { Pagination } from '../organisms/ui/Pagination'
+import { AnimatedGroup } from '../atoms/ui/AnimatedGroup'
 
 interface Data {
   Page: {
@@ -62,24 +63,39 @@ export const SearchGallery = ({ query }: { query: string }) => {
     }
   }, [data])
 
-  if (loading) return <div className="h-screen w-screen animate-pulse" />
-  if (error) return <p>Error: {error.message}</p>
-
   const animes = data?.Page?.media as SimpleAnime[]
   const paginationRange = getPaginationRange()
+
+  console.log(animes, loading, animes)
 
   return (
     <Section className="flex w-full flex-col gap-8 py-16">
       <h2 className="text-3xl font-bold">{query}</h2>
-      <Suspense fallback={<div>Loading Gallery...</div>}>
-        <Gallery animes={animes} />
-      </Suspense>
-      <Pagination
-        totalPages={totalPages}
-        currentPage={currentPage}
-        setCurrentPage={setCurrentPage}
-        paginationRange={paginationRange}
-      />
+      {animes && !error && !loading ? (
+        <>
+          <Suspense fallback={<div>Loading Gallery...</div>}>
+            <Gallery animes={animes} />
+          </Suspense>
+          <Pagination
+            totalPages={totalPages}
+            currentPage={currentPage}
+            setCurrentPage={setCurrentPage}
+            paginationRange={paginationRange}
+          />
+        </>
+      ) : (
+        <AnimatedGroup className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+          <div className="h-[200px] bg-red-600" />
+        </AnimatedGroup>
+      )}
     </Section>
   )
 }

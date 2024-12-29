@@ -27,7 +27,7 @@ export const Avatar = () => {
         className="rounded-full"
       />
       <span
-        className={`absolute left-7 top-0 h-3.5 w-3.5 rounded-full border-2 border-white dark:border-gray-800 ${isOnline ? 'bg-green-400' : 'bg-redd-500 animate-pulse'}`}
+        className={`absolute bottom-0 left-7 h-3.5 w-3.5 rounded-full border-2 border-white dark:border-gray-800 ${isOnline ? 'bg-green-400' : 'bg-redd-500 animate-pulse'}`}
       />
     </Link>
   )
