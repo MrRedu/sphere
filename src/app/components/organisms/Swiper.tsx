@@ -11,7 +11,7 @@ import { useMemo, useState } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 
-import { SkeletonCarousel } from '@/components/atoms/skeletons/SkeletonCarousel'
+import { CarouselSkeleton } from '#/src/app/components/atoms/skeletons/CarouselSkeleton'
 import { useWindowSize } from '@/hooks/useWindowSize'
 
 import { SimpleAnime } from '../../types/anime.type'
@@ -93,7 +93,7 @@ export const Swiper = ({
             </SwiperSlide>
           ))
         ) : (
-          <SkeletonCarousel />
+          <CarouselSkeleton />
         )}
       </SwiperComponent>
 
