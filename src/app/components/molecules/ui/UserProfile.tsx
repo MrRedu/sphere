@@ -4,14 +4,14 @@ import Image from 'next/image'
 import { signOut, useSession } from 'next-auth/react'
 
 import Section from '@/components/atoms/Section'
-import { hideEmail } from '#/src/app/lib/utils'
+import { hideEmail } from '@/lib/utils'
 
 import { Button } from './Button'
 
 export const UserProfile = () => {
   const { data: session, status } = useSession()
-  const fistName = session?.user?.name?.split(' ')[0] || 'Name'
-  const lastName = session?.user?.name?.split(' ')[1] || 'LastName'
+  const fistName = session?.user?.name?.split(' ')[0] || 'Name LastName'
+  const lastName = session?.user?.name?.split(' ')[1]
 
   return (
     <Section className="flex items-center gap-4 pt-16">
@@ -24,12 +24,12 @@ export const UserProfile = () => {
       />
       <div className="flex flex-col gap-1">
         <h2 className="mb-2 text-3xl font-bold">
-          {fistName} {`${lastName.charAt(0)}.`}
+          {fistName} {lastName && `${lastName?.charAt(0)}.`}
         </h2>
 
         <div className="flex items-center gap-2">
           <MailCheck size={14} />
-          <span className="text-sm font-semibold">
+          <span className="font-semibold">
             {hideEmail(session?.user?.email || '') || 'email@example.com'}
           </span>
         </div>
@@ -37,16 +37,19 @@ export const UserProfile = () => {
         {status === 'authenticated' ? (
           <div className="flex items-center gap-2">
             <Fingerprint size={14} />
-            <span className="text-sm font-semibold">Authenticated</span>
+            <span className="font-semibold">Authenticated</span>
           </div>
         ) : (
           <div className="flex items-center gap-2">
             <Fingerprint size={14} />
-            <span className="text-sm font-semibold">Status</span>
+            <span className="font-semibold">Status</span>
           </div>
         )}
       </div>
-      <Button onClick={() => signOut({ callbackUrl: '/' })}>
+      <Button
+        className="mb-auto ml-auto"
+        onClick={() => signOut({ callbackUrl: '/' })}
+      >
         <LogOut />
         Sign Out
       </Button>

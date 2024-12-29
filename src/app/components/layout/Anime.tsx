@@ -24,6 +24,7 @@ import { TextLoop } from '../atoms/ui/TextLoop'
 import { Tilt } from '../atoms/ui/Tilt'
 import { AnimeStats } from '../molecules/AnimeStats'
 import { BannerImage } from '../molecules/BannerImage'
+import { AnimeButtons } from '../molecules/ui/AnimeButtons'
 
 export const Anime = ({ anime }: { anime: AnimeInterface }) => {
   const episodesInformation = [
@@ -91,6 +92,7 @@ export const Anime = ({ anime }: { anime: AnimeInterface }) => {
       icon: <MoveDown size={14} />,
     },
   ]
+
   return (
     <>
       {/* Overlay */}
@@ -130,27 +132,7 @@ export const Anime = ({ anime }: { anime: AnimeInterface }) => {
               />
             </div>
           </Tilt>
-          {/* <div className="mt-4 flex items-center justify-center gap-4">
-            <Button
-              className="md:flex-grow"
-              onClick={() => toggleFavouriteAnime(anime.id)}
-            >
-              {favouriteAnimes?.includes(anime.id) ? (
-                <Heart fill="currentColor" />
-              ) : (
-                <Heart />
-              )}
-              {favouriteAnimes?.includes(anime.id) ? (
-                <span className="hidden md:block">Liked</span>
-              ) : (
-                <span className="hidden md:block">Like</span>
-              )}
-            </Button>
-            <Button className="md:flex-grow">
-              <Play />
-              <span className="hidden md:block">See Trailer</span>
-            </Button>
-          </div> */}
+          <AnimeButtons animeId={anime.id} />
         </div>
         <div className="flex flex-col gap-4">
           {/* Title */}
@@ -191,10 +173,12 @@ export const Anime = ({ anime }: { anime: AnimeInterface }) => {
           {/* Description */}
           <RichText content={anime.description} />
         </div>
+
         {/* 
         <pre>
           <code>{JSON.stringify(anime, undefined, 2)}</code>
-        </pre> */}
+        </pre> 
+        */}
       </Section>
     </>
   )

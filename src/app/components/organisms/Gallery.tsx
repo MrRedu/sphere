@@ -15,6 +15,7 @@ import { SimpleAnime } from '../../types/anime.type'
  * // Display a list of anime
  * <Gallery animes={animes} />
  */
+
 const Gallery = ({ animes }: { animes: SimpleAnime[] }) => {
   return (
     <AnimatedGroup className="grid grid-cols-1 gap-4 md:grid-cols-2 lg:grid-cols-3">

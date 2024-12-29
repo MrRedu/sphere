@@ -1,38 +1,22 @@
 'use client'
 import { Search } from 'lucide-react'
-import { useRouter } from 'next/navigation'
-import { useState } from 'react'
 
 import { BorderTrail } from '@/components/atoms/ui/BorderTail'
 
-export const SearchBar = () => {
-  const [query, setQuery] = useState<string>('')
-  const [isVibrating, setIsVibrating] = useState<boolean>(false)
-  const route = useRouter()
+interface SearchBarProps {
+  query: string
+  isVibrating: boolean
+  handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
+}
 
-  const handleChange = (event: React.ChangeEvent<HTMLInputElement>) => {
-    const value = event.target.value
-    setQuery(value)
-  }
-  const handleSubmit = (event: React.FormEvent<HTMLFormElement>) => {
-    event.preventDefault()
-
-    if (query.length <= 2) {
-      setIsVibrating(true)
-      setTimeout(() => {
-        setIsVibrating(false)
-      }, 500)
-      return
-    }
-
-    route.push(`/animes/search/${query}`)
-  }
+export const SearchBar = ({
+  query,
+  isVibrating,
+  handleChange,
+}: SearchBarProps) => {
   return (
-    <form
-      onSubmit={handleSubmit}
-      style={{ animation: isVibrating ? 'shake 0.3s ease-in-out' : '' }}
-    >
-      <div className="w-full min-w-[200px] max-w-sm">
+    <div style={{ animation: isVibrating ? 'shake 0.3s ease-in-out' : '' }}>
+      <div className="w-full min-w-[200px]">
         <div className="relative rounded-md bg-dark/70">
           <BorderTrail
             style={{
@@ -46,7 +30,7 @@ export const SearchBar = () => {
             name="query"
             value={query}
             onChange={handleChange}
-            className={`w-full rounded-md border border-primary bg-transparent p-2 pr-12 text-sm font-semibold text-primary shadow-lg transition duration-300 placeholder:text-slate-400 focus:outline-none`}
+            className={`w-full rounded-md border border-primary/30 bg-transparent p-2 pr-12 text-sm font-semibold text-primary shadow-lg transition duration-300 placeholder:text-slate-400 focus:outline-none`}
             placeholder="ONE PIECE, Trigun, One Punch Man..."
           />
           <button
@@ -57,6 +41,6 @@ export const SearchBar = () => {
           </button>
         </div>
       </div>
-    </form>
+    </div>
   )
 }

@@ -22,7 +22,9 @@ export const metadata: Metadata = {
     template: '%s | Sphere',
     default: 'Sphere: Tu Portal al Universo del Anime',
   },
-  authors: [{ name: '(Redu) - Eduardo R.', url: 'https://github.com/MrRedu' }],
+  authors: [
+    { name: '(Mr Redu) - Eduardo R.', url: 'https://github.com/MrRedu' },
+  ],
   creator: 'Mr Redu',
   description:
     'Bienvenido a Sphere, tu portal definitivo al fascinante universo del anime. Con nuestra aplicación web, podrás explorar una vasta colección de animes. Busca tus series favoritas por nombre, puntuación o categoría y descubre nuevos títulos que se ajusten a tus gustos. Además, podrás guardar tus animes preferidos en una lista de favoritos, facilitando su acceso en cualquier momento. Con una interfaz intuitiva y responsiva, Sphere te ofrece una experiencia fluida y agradable mientras navegas por el mundo del anime. Únete a nosotros y transforma tu forma de disfrutar el anime.',

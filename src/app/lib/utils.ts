@@ -6,7 +6,7 @@ export function cn(...inputs: ClassValue[]) {
 }
 
 export const capitalize = (s: string) =>
-  s.charAt(0).toUpperCase() + s.slice(1).toLocaleLowerCase()
+  s?.charAt(0).toUpperCase() + s?.slice(1).toLocaleLowerCase()
 
 export const formatDate = (date: string) => {
   return new Date(date).toLocaleDateString('en-US', {
