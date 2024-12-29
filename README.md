@@ -8,13 +8,13 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 
 - [x] Página de inicio con lista de animes
 - [x] Consumir la API de Anilist API para obtener y mostrar una lista de animes.
-- [+] Implementar paginación para manejar grandes cantidades de datos.
-- [ ] Mostrar información básica de cada anime (nombre, formato, episodios categorías, imagen, score y status).
+- [x] Implementar paginación para manejar grandes cantidades de datos.
+- [x] Mostrar información básica de cada anime (nombre, formato, episodios categorías, imagen, score y status).
 
 ## Barra de búsqueda multifuncional
 
-- [ ] Implementar una funcionalidad de búsqueda que permita a los usuarios buscar: animes por nombre, por score, por categoría y por status.
-- [ ] Mostrar los resultados de búsqueda de manera paginada.
+- [x] Implementar una funcionalidad de búsqueda que permita a los usuarios buscar: animes por nombre, por score, por categoría y por status.
+- [x] Mostrar los resultados de búsqueda de manera paginada.
 
 ## Página de detalles del anime
 
@@ -28,10 +28,10 @@ Desarrolla una aplicación web que permita a los usuarios explorar el universo d
 ## Diseño y Responsividad
 
 - [x] Tomar de guía este diseño: [hidden information]
-- [ ] Incluir animaciones y transiciones suaves entre vistas.
-- [ ] Implementación de estrategias de SEO
-- [ ] Implementar las mejores prácticas de SEO, incluyendo meta tags y Open Graph tags.
-- [ ] Utilizar técnicas de pre-rendering y SSR (Server-Side Rendering) para mejorar el SEO.
+- [x] Incluir animaciones y transiciones suaves entre vistas.
+- [x] Implementación de estrategias de SEO
+- [x] Implementar las mejores prácticas de SEO, incluyendo meta tags y Open Graph tags.
+- [x] Utilizar técnicas de pre-rendering y SSR (Server-Side Rendering) para mejorar el SEO.
 - [x] Implementar rutas amigables para SEO.
 
 ## Validaciones y manejo de errores
