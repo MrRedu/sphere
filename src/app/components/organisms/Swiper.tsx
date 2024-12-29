@@ -17,7 +17,7 @@ import { useWindowSize } from '@/hooks/useWindowSize'
 import { SimpleAnime } from '../../types/anime.type'
 
 export const Swiper = ({
-  animes,
+  animes = [],
   setCurrentIndex,
 }: {
   animes: SimpleAnime[]
@@ -63,7 +63,7 @@ export const Swiper = ({
         autoplay={{ delay: 10_000 }}
         onSwiper={() => setSwiperReady(true)}
       >
-        {swiperReady ? (
+        {swiperReady && animes.length > 0 ? (
           animes?.slice(0, showMovies).map(anime => (
             <SwiperSlide key={anime.id} className="cursor-grab object-cover">
               <Link
