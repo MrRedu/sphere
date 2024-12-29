@@ -132,7 +132,7 @@ export const Anime = ({ anime }: { anime: AnimeInterface }) => {
               />
             </div>
           </Tilt>
-          <AnimeButtons animeId={anime.id} />
+          <AnimeButtons animeId={anime.id} trailer={anime.trailer} />
         </div>
         <div className="flex flex-col gap-4">
           {/* Title */}
@@ -174,11 +174,9 @@ export const Anime = ({ anime }: { anime: AnimeInterface }) => {
           <RichText content={anime.description} />
         </div>
 
-        {/* 
         <pre>
           <code>{JSON.stringify(anime, undefined, 2)}</code>
-        </pre> 
-        */}
+        </pre>
       </Section>
     </>
   )

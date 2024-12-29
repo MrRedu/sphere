@@ -11,13 +11,13 @@ import { useMemo, useState } from 'react'
 import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 
-import { SkeletonCarousel } from '@/components/atoms/skeletons/SkeletonCarousel'
 import { useWindowSize } from '@/hooks/useWindowSize'
+import { CarouselSkeleton } from '#/src/app/components/atoms/skeletons/CarouselSkeleton'
 
 import { SimpleAnime } from '../../types/anime.type'
 
 export const Swiper = ({
-  animes,
+  animes = [],
   setCurrentIndex,
 }: {
   animes: SimpleAnime[]
@@ -63,7 +63,7 @@ export const Swiper = ({
         autoplay={{ delay: 10_000 }}
         onSwiper={() => setSwiperReady(true)}
       >
-        {swiperReady ? (
+        {swiperReady && animes.length > 0 ? (
           animes?.slice(0, showMovies).map(anime => (
             <SwiperSlide key={anime.id} className="cursor-grab object-cover">
               <Link
@@ -93,7 +93,7 @@ export const Swiper = ({
             </SwiperSlide>
           ))
         ) : (
-          <SkeletonCarousel />
+          <CarouselSkeleton />
         )}
       </SwiperComponent>
 
