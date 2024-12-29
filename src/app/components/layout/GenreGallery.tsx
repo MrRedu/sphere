@@ -3,11 +3,11 @@
 import { gql, useQuery } from '@apollo/client'
 import { Suspense, useEffect, useState } from 'react'
 
-import { usePagination } from '../../hooks/usePagination'
+import { usePagination } from '@/hooks/usePagination'
 import { SimpleAnime } from '../../types/anime.type'
-import Section from '../atoms/Section'
-import Gallery from '../organisms/Gallery'
-import { Pagination } from '../organisms/ui/Pagination'
+import Section from '@/components/atoms/Section'
+import Gallery from '@/components/organisms/Gallery'
+import { Pagination } from '@/components/organisms/ui/Pagination'
 
 interface Data {
   Page: {

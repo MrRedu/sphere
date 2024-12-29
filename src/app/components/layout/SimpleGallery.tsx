@@ -8,7 +8,7 @@ import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
 
 import { SimpleAnime } from '../../types/anime.type'
-import { GallerySkeleton } from '../atoms/skeletons/GallerySkeleton'
+import { GallerySkeleton } from '@/components/atoms/skeletons/GallerySkeleton'
 
 const Gallery = lazy(() => import('@/components/organisms/Gallery'))
 

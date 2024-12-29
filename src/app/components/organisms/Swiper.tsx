@@ -12,7 +12,7 @@ import { Autoplay, Navigation, Pagination } from 'swiper/modules'
 import { Swiper as SwiperComponent, SwiperSlide } from 'swiper/react'
 
 import { useWindowSize } from '@/hooks/useWindowSize'
-import { CarouselSkeleton } from '#/src/app/components/atoms/skeletons/CarouselSkeleton'
+import { CarouselSkeleton } from '@/components/atoms/skeletons/CarouselSkeleton'
 
 import { SimpleAnime } from '../../types/anime.type'
 
