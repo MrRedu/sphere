@@ -8,6 +8,7 @@ import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
 
 import { SimpleAnime } from '../../types/anime.type'
+import { GallerySkeleton } from '../atoms/skeletons/GallerySkeleton'
 
 const Gallery = lazy(() => import('@/components/organisms/Gallery'))
 
@@ -89,10 +90,10 @@ export const SimpleGallery = () => {
     }
   }, [data])
 
-  if (loading)
-    return <div className="h-[400px] w-full animate-pulse bg-red-500" />
+  // if (loading)
+  //   return <div className="h-[400px] w-full animate-pulse bg-red-500" />
 
-  if (error) return <p>Error: {error.message}</p>
+  // if (error) return <p>Error: {error.message}</p>
 
   const animes = data?.Page?.media as SimpleAnime[]
   const paginationRange = getPaginationRange()
@@ -101,9 +102,9 @@ export const SimpleGallery = () => {
     <Section className="flex w-full flex-col gap-8 py-16">
       <h2 className="text-3xl font-bold">All Animes</h2>
       <Filters filters={filters} onFilterChange={setFilters} />
-      <Suspense fallback={<div>Loading Gallery...</div>}>
-        <Gallery animes={animes} />
-      </Suspense>
+      {/* <Suspense fallback={<GallerySkeleton />}> */}
+      {loading || error ? <GallerySkeleton /> : <Gallery animes={animes} />}
+      {/* </Suspense> */}
       <Pagination
         totalPages={totalPages}
         currentPage={currentPage}
