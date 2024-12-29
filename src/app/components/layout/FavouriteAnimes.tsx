@@ -1,14 +1,17 @@
 'use client'
 import { gql, useQuery } from '@apollo/client'
-import Image from 'next/image'
 import { useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
 import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
 
-import Gallery from '../../components/organisms/Gallery'
-import { useFavouriteAnimes } from '../../stores/animes/favourite-animes.store'
+import Gallery from '@/components/organisms/Gallery'
+import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
+import { FavouriteAnimesEmptyState } from '../atoms/skeletons/FavouriteAnimesEmptyState'
+import { GallerySkeleton } from '../atoms/skeletons/GallerySkeleton'
+import { Filters } from '../organisms/ui/Filters'
+import { SimpleAnime } from '../../types/anime.type'
 
 const GET_MY_FAVOURITE_ANIMES = gql`
   query GetMyFavouriteAnimes($ids: [Int], $page: Int, $perPage: Int) {
@@ -26,6 +29,8 @@ const GET_MY_FAVOURITE_ANIMES = gql`
           color
         }
         genres
+        status
+        averageScore
       }
       pageInfo {
         total
@@ -37,10 +42,18 @@ const GET_MY_FAVOURITE_ANIMES = gql`
 `
 
 export const FavouriteAnimes = () => {
+  const perPage = 9
   const favouriteAnimes = useFavouriteAnimes(state => state.favouriteAnimes)
-  const [animeData, setAnimeData] = useState([])
-  const perPage = 9 // Número de animes por página
   const [totalPages, setTotalPages] = useState(0)
+  const [animeData, setAnimeData] = useState<SimpleAnime[]>([])
+  const [filteredAnimeData, setFilteredAnimeData] = useState<SimpleAnime[]>([])
+  const [filters, setFilters] = useState({
+    mediaGenre2: '',
+    status: '',
+    sort: 'SCORE_DESC',
+    search: '',
+  })
+
   const { currentPage, setCurrentPage, getPaginationRange } =
     usePagination(totalPages)
 
@@ -49,42 +62,75 @@ export const FavouriteAnimes = () => {
     skip: favouriteAnimes.length === 0,
   })
 
-  useEffect(() => {
-    if (data) {
-      setAnimeData(data.Page.media)
-      setTotalPages(Math.ceil(favouriteAnimes.length / perPage))
-    }
-  }, [data, favouriteAnimes])
+  const animes = data?.Page?.media as SimpleAnime[]
 
   const paginationRange = getPaginationRange()
 
-  if (loading) return <div className="h-screen w-screen animate-pulse" />
-  if (error) return <p>Error: {error.message}</p>
+  useEffect(() => {
+    if (animes) {
+      setAnimeData(animes)
+      setTotalPages(Math.ceil(favouriteAnimes.length / perPage))
+    }
+  }, [animes, favouriteAnimes])
+
+  // Efecto para aplicar filtros
+  useEffect(() => {
+    let filteredData = [...animeData]
+
+    // Aplicar filtros
+    if (filters.mediaGenre2) {
+      filteredData = filteredData.filter(anime =>
+        anime.genres.includes(filters.mediaGenre2)
+      )
+    }
+
+    if (filters.status) {
+      filteredData = filteredData.filter(
+        anime => anime.status === filters.status
+      )
+    }
+
+    // Ordenar según el filtro seleccionado
+    if (filters.sort) {
+      filteredData.sort((a, b) => {
+        if (filters.sort === 'SCORE_DESC') {
+          return (b.averageScore || 0) - (a.averageScore || 0) // Orden descendente
+        } else if (filters.sort === 'SCORE') {
+          return (a.averageScore || 0) - (b.averageScore || 0) // Orden ascendente
+        }
+        return 0 // Sin cambio si no hay un filtro válido
+      })
+    }
+
+    // Filtrar por búsqueda
+    if (filters.search.length >= 3) {
+      filteredData = filteredData.filter(anime =>
+        anime.title.english.toLowerCase().includes(filters.search.toLowerCase())
+      )
+    }
+
+    setFilteredAnimeData(filteredData)
+    setTotalPages(Math.ceil(filteredData.length / perPage))
+
+    // Reset a la primera página si cambian los filtros
+    setCurrentPage(1)
+  }, [animeData, filters])
+
+  // if (loading) return <div className="h-screen w-screen animate-pulse" />
+  // if (error) return <p>Error: {error.message}</p>
 
   return (
     <Section className="flex w-full flex-col gap-8 py-16">
-      {favouriteAnimes.length === 0 && (
-        <div className="flex flex-col items-center justify-center gap-8 py-12 md:flex-row md:gap-32">
-          <div className="w-full max-w-[400px]">
-            <p className="mb-4 text-3xl font-bold">
-              {`You don't have any favourite animes yet.`}
-            </p>
-            <p className="mb-4 text-2xl font-semibold">Start adding some!</p>
-            {/* <Link href="/">Search for animes</Link> */}
-          </div>
-          <Image
-            src="/box.svg"
-            alt="Box"
-            width={100}
-            height={100}
-            className="w-full max-w-[300px] object-cover"
-          />
-        </div>
-      )}
+      {favouriteAnimes.length === 0 && <FavouriteAnimesEmptyState />}
       {favouriteAnimes.length > 0 && (
         <>
           <h2 className="text-3xl font-bold">My Favourite Animes</h2>
-          <Gallery animes={animeData} />
+          <Filters filters={filters} onFilterChange={setFilters} />
+          {loading || error ? (
+            <GallerySkeleton />
+          ) : (
+            <Gallery animes={filteredAnimeData} />
+          )}
           <Pagination
             totalPages={totalPages}
             currentPage={currentPage}
