@@ -1,94 +1,36 @@
-# Concert Plaza (Prueba técnica)
+This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
 
-## Descripción del Proyecto
+## Getting Started
 
-Desarrolla una aplicación web que permita a los usuarios explorar el universo de Anilist API, ver lista de animes, detalles de los animes por cada card. Debes integrar la API de Anilist API para obtener toda la información necesaria.
+First, run the development server:
 
-## Funcionalidades Requeridas
+```bash
+npm run dev
+# or
+yarn dev
+# or
+pnpm dev
+# or
+bun dev
+```
 
-- [x] Página de inicio con lista de animes
-- [x] Consumir la API de Anilist API para obtener y mostrar una lista de animes.
-- [x] Implementar paginación para manejar grandes cantidades de datos.
-- [x] Mostrar información básica de cada anime (nombre, formato, episodios categorías, imagen, score y status).
+Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
 
-## Barra de búsqueda multifuncional
+You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
 
-- [x] Implementar una funcionalidad de búsqueda que permita a los usuarios buscar: animes por nombre, por score, por categoría y por status.
-- [x] Mostrar los resultados de búsqueda de manera paginada.
+This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
 
-## Página de detalles del anime
+## Learn More
 
-- [x] Implementar una vista de detalles que muestre la información completa del anime seleccionado, incluyendo: nombre, estado, episodios, score, categorías, temporada, studio y resumen
-- [x] Imagen del anime
-- [x] Implementar sistema de animes favoritos
-- [x] Implementar una funcionalidad que permita a los usuarios marcar animes como favoritos y guardarlos en el navegador (local storage).
-- [x] Mostrar una lista de los animes favoritos guardados.
-- [x] Permitir filtrar favoritos por estado o categoría.
+To learn more about Next.js, take a look at the following resources:
 
-## Diseño y Responsividad
+- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
+- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
 
-- [x] Tomar de guía este diseño: [hidden information]
-- [x] Incluir animaciones y transiciones suaves entre vistas.
-- [x] Implementación de estrategias de SEO
-- [x] Implementar las mejores prácticas de SEO, incluyendo meta tags y Open Graph tags.
-- [x] Utilizar técnicas de pre-rendering y SSR (Server-Side Rendering) para mejorar el SEO.
-- [x] Implementar rutas amigables para SEO.
+You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
 
-## Validaciones y manejo de errores
+## Deploy on Vercel
 
-- [x] Asegurar que todas las entradas del usuario y respuestas de la API sean validadas correctamente.
-- [x] Manejar estados de carga y errores de manera adecuada.
-- [ ] Implementar mensajes de error informativos y amigables
+The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
 
-## Requisitos Técnicos
-
-### Framework
-
-- [x] Utilizar Next.js o React para desarrollar la aplicación.
-
-### Renderizado
-
-- [ ] Implementar estrategias de server-side rendering y static site generation para mejorar el rendimiento.
-
-### Lenguaje
-
-- [x] Utilizar TypeScript con interfaces y tipos estrictos en todo el código.
-
-### Calidad de Código
-
-- [x] Configurar reglas de ESLint y Prettier para mantener un código limpio y consistente.
-
-### Estilos
-
-- [x] Utilizar CSS o una librería de componentes Ul para estilos. <br>
-      _Se valorará el uso de Tailwind CSS o styled-components._
-
-### Despliegue (Opcional)
-
-- [x] Desplegar la aplicación en Cloudflare Pages, Vercel o Netlify.
-
-## ¿Qué se espera de ti en esta prueba?
-
-### Dominio de las tecnologías
-
-- Next.js (Frontend) / React.js (Frontend)
-- TypeScript
-- Manejo de APIs REST
-
-### Habilidades de documentación
-
-- Redacción clara y concisa de la documentación del proyecto
-- Estructura lógica del código y la arquitectura
-- Diagramado del planteamiento de la solución
-
-### Enfoque en la mejora continua:
-
-- Identificar oportunidades de mejora en el rendimiento
-- Proponer soluciones efectivas para la escalabilidad
-- Documentar decisiones técnicas y su justificación
-
-## Recursos
-
-- Documentación oficial de Next.js
-- GraphQL API: `https://studio.apollographql.com/sandbox/explorer?endpoint=https%3A%2F%2Fgraphql.anilist.co&explorerURLState=N4IgJg9gxgrgtgUwHYBcQC4TADpIAR4AKAhgOYJ474F6JgCWxluNNAzvSggKoBOANi1Z4UnfhSrCayUv3psAFkKlJiogG4JlNAL7aCYBGyi96AB1EQk2vdVs6QAGhDrip4gCNxbDFmy9cBx0gA&_gl=1*1k0007i*_gcl_au*ODQ5MTE4MTg1LjE3MzQ5OTg5NTI`
-- Link diseño como referencia: [hidden information]
+Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
