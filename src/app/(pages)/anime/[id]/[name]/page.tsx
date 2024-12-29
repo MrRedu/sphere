@@ -1,7 +1,7 @@
 import { gql } from '@apollo/client'
 
 import { getClient } from '@/lib/client'
-import { Anime } from '#/src/app/components/layout/Anime'
+import { Anime } from '@/components/layout/Anime'
 import { Anime as AnimeInterface } from '#/src/app/types/anime.type'
 
 const GET_ANIME_BY_ID = gql`
@@ -124,8 +124,14 @@ export default async function AnimePage({
   const { id } = await params
   const data = await loadData(Number(id))
   const anime = data.Media as AnimeInterface
-  // if (loading) return <p>Loading...</p>
-  // if (error) return <p>Error: {error.message}</p>
+  // || {
+  //   name: 'NetworkError',
+  //   message: 'Failed to fetch',
+  // }
 
-  return <Anime anime={anime} />
+  return (
+    <>
+      <Anime anime={anime} />
+    </>
+  )
 }
