@@ -4,9 +4,8 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { signIn, signOut, useSession } from 'next-auth/react'
 
-import { useOnlineStatus } from '@/hooks/useIsOnline'
-
 import { Button } from '@/components/molecules/ui/Button'
+import { useOnlineStatus } from '@/hooks/useIsOnline'
 
 export const Avatar = () => {
   const { data: session } = useSession()

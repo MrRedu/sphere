@@ -1,10 +1,12 @@
 'use client'
 import { Heart } from 'lucide-react'
-import { Button } from './Button'
-import Link from 'next/link'
 import Image from 'next/image'
+import Link from 'next/link'
+
 import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
 import { SimpleAnime } from '#/src/app/types/anime.type'
+
+import { Button } from './Button'
 
 type GalleryCardProps = Omit<SimpleAnime, 'coverImage'>
 

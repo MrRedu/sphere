@@ -13,8 +13,6 @@ import Image from 'next/image'
 import Link from 'next/link'
 import { ReactCountryFlag } from 'react-country-flag'
 
-import { capitalize, formatDate } from '@/lib/utils'
-import { Anime as AnimeInterface } from '../../types/anime.type'
 import Section from '@/components/atoms/Section'
 import { Chip } from '@/components/atoms/ui/Chip'
 import { Rating } from '@/components/atoms/ui/Rating'
@@ -25,6 +23,9 @@ import { Tilt } from '@/components/atoms/ui/Tilt'
 import { AnimeStats } from '@/components/molecules/AnimeStats'
 import { BannerImage } from '@/components/molecules/BannerImage'
 import { AnimeButtons } from '@/components/molecules/ui/AnimeButtons'
+import { capitalize, formatDate } from '@/lib/utils'
+
+import { Anime as AnimeInterface } from '../../types/anime.type'
 
 export const Anime = ({ anime }: { anime: AnimeInterface }) => {
   const episodesInformation = [

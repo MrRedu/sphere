@@ -1,8 +1,7 @@
 import { AnimatedGroup } from '@/components/atoms/ui/AnimatedGroup'
+import { GalleryCard } from '@/components/molecules/ui/GalleryCard'
 
 import { SimpleAnime } from '../../types/anime.type'
-
-import { GalleryCard } from '@/components/molecules/ui/GalleryCard'
 
 const Gallery = ({ animes }: { animes: SimpleAnime[] }) => {
   return (
