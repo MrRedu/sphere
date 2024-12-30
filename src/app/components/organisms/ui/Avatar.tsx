@@ -22,6 +22,7 @@ export const Avatar = () => {
     <div className="flex items-center gap-2">
       <Button
         title="Log Out"
+        aria-label="Log Out"
         onClick={() => signOut({ callbackUrl: '/' })}
         className="h-10 w-10 p-2"
       >

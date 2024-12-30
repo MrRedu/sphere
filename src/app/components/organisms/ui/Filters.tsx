@@ -70,7 +70,9 @@ interface DropDownProps {
 const DropDown = ({ title, value, onChange, items }: DropDownProps) => {
   return (
     <div className="w-full max-w-[200px]">
-      <label className="mb-1 block font-semibold">{title}</label>
+      <label htmlFor={title} className="mb-1 block font-semibold">
+        {title}
+      </label>
 
       <div className="relative rounded-md">
         <BorderTrail
@@ -81,6 +83,7 @@ const DropDown = ({ title, value, onChange, items }: DropDownProps) => {
           size={0}
         />
         <select
+          id={title}
           value={value || ''}
           onChange={onChange}
           className="w-full cursor-pointer appearance-none rounded-md border border-primary/30 bg-dark/70 py-2 pl-3 pr-8 text-sm text-slate-200 focus:outline-none"
