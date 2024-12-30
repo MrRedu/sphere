@@ -1,7 +1,7 @@
 <p align="center">
    <br/>
    <a href="https://sphere-mrredu.vercel.app/" target="_blank">
-    <img src="./public/logo.svg" width="250" alt="">
+    <img src="./public/logo.svg" width="150" >
    </a>
    <h3 align="center">Sphere</h3>
    <p align="center">
@@ -9,16 +9,14 @@
    </p>
 </p>
 
-## Descripción
-
-Aplicación web que permite a los usuarios explorar el universo de Anilist API, ver lista de animes, detalles de los animes por cada card. Debes integrar la API de Anilist API para obtener toda la información necesaria.
-
 ## Tabla de Contenidos
 
 <details open>
   <summary>Tabla de contenidos</summary>
   <ul>
+    <li><a href="#-descripción">Descripción</a></li>
     <li><a href="#-características">Características</a></li>
+    <li><a href="#-demo">Demo</a></li>
     <li><a href="#-tecnologías">Tecnologías</a></li>
     <li><a href="#-instalación">Instalación</a></li>
     <li><a href="#-uso">Uso</a></li>
@@ -27,11 +25,55 @@ Aplicación web que permite a los usuarios explorar el universo de Anilist API, 
   </ul>
 </details>
 
+## Descripción del Proyecto
+
+Bienvenido a Sphere, tu portal definitivo al fascinante universo del anime. Con nuestra aplicación web, podrás explorar una vasta colección de animes que abarcan desde los clásicos hasta los últimos estrenos. La interfaz intuitiva y responsiva te permite buscar tus series favoritas por nombre, puntuación o categoría, facilitando el descubrimiento de nuevos títulos que se ajusten a tus gustos personales.
+
+Además, podrás guardar tus animes preferidos en una lista de favoritos, lo que te permitirá acceder a ellos en cualquier momento. La experiencia de navegación es fluida y agradable, diseñada para que disfrutes al máximo mientras te sumerges en el mundo del anime. Únete a nosotros y transforma tu forma de disfrutar el anime con Sphere.
+
 ## Características
 
-- Renderizado del lado del servidor (SSR) y generación de sitios estáticos (SSG).
-- Enrutamiento basado en archivos.
-- Optimización automática de imágenes.
+- **Página de Inicio**:
+
+  - Tenemos una sección principal con un deslizador horizontal con los animes más visto de todos los tiempos
+  - Una sección en grilla con los 4 animes más populares en el momento
+  - Por último, tenemos una galería de animes; en el que podemos filtrar por nombre, género, estado, score; además podemos agregar a favoritos
+
+- **Página de Detalles del Anime**:
+
+  - Detalle del anime con información completa: nombre (inglés y nativo), estado, episodios, puntuación, categorías, formato, fecha de salida con fecha de culminación y resumen.
+  - Imagen del anime incluida con animación de carta holográfica al hacerle hover.
+  - Botones; uno para agregar a favoritos y otro para ir al trailer directamente.
+
+- **Sistema de Favoritos**:
+
+  - Los usuarios pueden marcar animes como favoritos y almacenarlos en el almacenamiento local del navegador.
+  - Opción para filtrar favoritos por género, estado, score y también por nombre.
+
+- **Diseño Responsivo**:
+
+  - Todas las pantallas están adaptadas a diferentes dispositivos para una experiencia óptima en móviles y computadoras de escritorio.
+
+- **SEO Optimizado**:
+
+  - Implementación de estrategias efectivas de SEO con meta tags y rutas amigables para el usuario.
+  - Uso de técnicas de pre-rendering y Server-Side Rendering (SSR) para mejorar el rendimiento.
+  - Cada enlace de anime específico tiene sus meta-tags de SEO; para asi ver su información al compartir su enlace.
+
+- **Manejo de Errores**:
+
+  - Validación adecuada de entradas del usuario y respuestas de la API.
+  - Estados de carga y mensajes de error informativos.
+
+- **Calidad del Código**:
+
+  - Reglas de ESLint y Prettier configuradas para mantener un código limpio.
+  - Uso estricto de TypeScript con interfaces y tipos definidos.
+
+## Demo
+
+¡Descubre <em>Sphere</em> directamente desde tu navegador! <br>
+[![Ver Deploy](https://img.shields.io/badge/Ver%20Deploy-Sphere-5fdd9d?style=for-the-badge&logo=vercel)](https://sphere-mrredu.vercel.app/)
 
 ## Tecnologías
 
@@ -110,6 +152,11 @@ Instrucciones sobre cómo contribuir al proyecto.
 ## Licencia
 
 Sphere está bajo la [Licencia MIT](LICENSE).
+
+<hr>
+<br>
+<br>
+<br>
 
 ![Logotipo](./public/logotype.svg)
 
