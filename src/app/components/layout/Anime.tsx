@@ -48,6 +48,7 @@ export const Anime = ({ anime }: { anime: AnimeInterface }) => {
         <ReactCountryFlag
           countryCode={anime.countryOfOrigin}
           svg
+          alt={`Flag of ${anime.countryOfOrigin}`}
           style={{ width: '2em', height: '2em' }}
         />
       ),

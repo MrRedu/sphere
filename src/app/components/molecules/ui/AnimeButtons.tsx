@@ -22,6 +22,9 @@ export const AnimeButtons = ({
   return (
     <div className="mt-4 flex items-center justify-center gap-4">
       <Button
+        title={
+          favouriteAnimes?.includes(animeId) ? 'Unlike anime' : 'Like anime'
+        }
         className="md:flex-grow"
         onClick={() => toggleFavouriteAnime(animeId)}
       >
@@ -36,7 +39,7 @@ export const AnimeButtons = ({
           <span className="hidden md:block">Like</span>
         )}
       </Button>
-      <Button href={trailerUrl} className="md:flex-grow">
+      <Button title="See trailer" href={trailerUrl} className="md:flex-grow">
         <Play />
         <span className="hidden md:block">See Trailer</span>
       </Button>
