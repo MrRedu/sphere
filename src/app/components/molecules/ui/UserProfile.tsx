@@ -7,6 +7,13 @@ import Section from '@/components/atoms/Section'
 import { hideEmail } from '@/lib/utils'
 import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
 
+/**
+ * A component that displays the user profile. It renders a section with the user's
+ * name, photo, email, and a status indicator. If the user is authenticated, it
+ * also renders the number of favourite animes.
+ *
+ * @returns {JSX.Element} A JSX element representing the user profile component.
+ */
 export const UserProfile = () => {
   const favouriteAnimes = useFavouriteAnimes(state => state.favouriteAnimes)
   const { data: session, status } = useSession()

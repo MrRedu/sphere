@@ -1,28 +1,26 @@
 import { TvMinimalPlay } from 'lucide-react'
 import Link from 'next/link'
 
-/**
- * A banner component that displays information about an anime,
- * such as its title and genres. It also includes a link to the
- * anime's information page.
- *
- * @param {{ id: number, title?: string, genres?: string[] }} props
- * @prop {number} id - The ID of the anime.
- * @prop {string} [title='Unknown'] - The title of the anime.
- * @prop {string[]} [genres=['placeholder-genre']] - The genres of the anime.
- *
- * @example
- * <InformationActiveBanner id={1} title="Naruto" genres={['Action', 'Adventure']} />
- *
- * @returns {JSX.Element} A JSX element representing the banner component.
- */
-
 type InformationActiveBanner = {
   id: number
   title?: string
   genres?: string[]
 }
 
+/**
+ * A component that displays information about an anime, including its title and genres,
+ * and provides a link to more detailed information.
+ *
+ * @param {Object} props - The properties for the component.
+ * @param {number} props.id - The ID of the anime.
+ * @param {string} [props.title='Unknown'] - The title of the anime.
+ * @param {string[]} [props.genres=['placeholder-genre']] - The genres of the anime.
+ *
+ * @returns {JSX.Element} A JSX element representing the information banner.
+ *
+ * The component includes an animated title and a list of genres, each linking to their respective genre pages.
+ * It also includes a link to the anime's detailed information page.
+ */
 export const InformationActiveBanner = ({
   id,
   title = 'Unknown',

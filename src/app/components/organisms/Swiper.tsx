@@ -16,6 +16,14 @@ import { useWindowSize } from '@/hooks/useWindowSize'
 
 import { SimpleAnime } from '../../types/anime.type'
 
+/**
+ * A carousel component that displays a list of anime covers.
+ *
+ * @param {SimpleAnime[]} animes - A list of anime objects.
+ * @param {Function} setCurrentIndex - A function that sets the current index of the carousel.
+ *
+ * @return {JSX.Element} A JSX element representing the carousel component.
+ */
 export const Swiper = ({
   animes = [],
   setCurrentIndex,

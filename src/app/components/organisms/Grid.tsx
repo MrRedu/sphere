@@ -5,6 +5,16 @@ import { Chip } from '@/components/atoms/ui/Chip'
 
 import { SimpleAnime } from '../../types/anime.type'
 
+/**
+ * A card component for an anime, with a poster image and a heading with the title and genres.
+ * The component is a link to the anime's information page.
+ *
+ * @param {{ anime: SimpleAnime, gridArea: string }} props
+ * @prop {SimpleAnime} anime - The anime data.
+ * @prop {string} gridArea - The CSS grid area for the component.
+ *
+ * @returns {JSX.Element} A JSX element representing the card component.
+ */
 const AnimeCard = ({
   anime,
   gridArea,
@@ -41,6 +51,15 @@ const AnimeCard = ({
     </Link>
   )
 }
+
+/**
+ * A grid component that displays a collection of anime cards.
+ *
+ * @param {{ animes: SimpleAnime[] }} props
+ * @prop {SimpleAnime[]} animes - An array of anime objects to be displayed in the grid.
+ *
+ * @returns {JSX.Element} A JSX element rendering a grid layout with multiple anime cards.
+ */
 
 export const Grid = ({ animes }: { animes: SimpleAnime[] }) => {
   return (

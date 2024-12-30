@@ -60,6 +60,17 @@ export const metadata: Metadata = {
   },
 }
 
+/**
+ * RootLayout is a React component that serves as the main layout for the application.
+ * It includes the Providers component which wraps the Header, a main content section,
+ * and the Footer. The layout applies custom fonts and styles, ensuring a consistent
+ * look and feel across the application. The children prop allows you to pass
+ * JSX content to be rendered within the main content section.
+ *
+ * @param {Object} props - The props object.
+ * @param {React.ReactNode} props.children - The child components to be rendered within the layout.
+ * @returns {JSX.Element} A JSX structure that represents the root layout of the application.
+ */
 export default function RootLayout({
   children,
 }: Readonly<{

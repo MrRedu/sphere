@@ -41,6 +41,21 @@ const GET_MY_FAVOURITE_ANIMES = gql`
   }
 `
 
+/**
+ * FavouriteAnimes component displays a list of the user's favourite animes,
+ * allowing filtering, sorting, and pagination. It utilizes the Zustand state
+ * management to retrieve the list of favourite anime IDs and fetches the
+ * corresponding anime details using a GraphQL query. It dynamically updates
+ * the displayed list based on the applied filters and search criteria.
+ *
+ * The component also handles loading and error states, displaying a skeleton
+ * or error message as appropriate. If no favourite animes are present, an
+ * empty state message is shown.
+ *
+ * @returns {JSX.Element} A section containing the user's favourite animes,
+ * with filtering and pagination controls, or an empty state if none are present.
+ */
+
 export const FavouriteAnimes = () => {
   const perPage = 9
   const favouriteAnimes = useFavouriteAnimes(state => state.favouriteAnimes)

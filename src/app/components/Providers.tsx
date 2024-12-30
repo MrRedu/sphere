@@ -9,6 +9,18 @@ const client = new ApolloClient({
   cache: new InMemoryCache(),
 })
 
+/**
+ * A component that provides both Apollo and NextAuth session context to its children.
+ *
+ * This component wraps its children with both `ApolloProvider` and `SessionProvider`,
+ * allowing them to access Apollo Client for GraphQL operations and session information
+ * via NextAuth.
+ *
+ * @param {PropsWithChildren} props - The component props.
+ * @param {React.ReactNode} props.children - The child components that will receive
+ * the context provided by `ApolloProvider` and `SessionProvider`.
+ */
+
 export const Providers = ({ children }: PropsWithChildren) => {
   return (
     <SessionProvider>

@@ -20,6 +20,12 @@ const links = [
   },
 ]
 
+/**
+ * A footer component that displays the logotype of Sphere and a list of links to resources
+ * such as the license, developer information, and source code.
+ *
+ * @returns {JSX.Element} A JSX element representing the footer component.
+ */
 export const Footer = () => {
   return (
     <footer className="relative flex w-full flex-col justify-between gap-x-12 gap-y-6 p-8 pt-48 text-center lg:flex-row lg:items-center lg:justify-between">

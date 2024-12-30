@@ -9,6 +9,16 @@ interface SearchBarProps {
   handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void
 }
 
+/**
+ * A component that renders a search bar with a input field and a search button.
+ *
+ * @param {{ query: string, isVibrating: boolean, handleChange: (event: React.ChangeEvent<HTMLInputElement>) => void }} props
+ * @prop {string} query - The current search query.
+ * @prop {boolean} isVibrating - Whether to shake the component.
+ * @prop {(event: React.ChangeEvent<HTMLInputElement>) => void} handleChange - The callback when the search query changes.
+ *
+ * @returns {JSX.Element} A JSX element representing the search bar component.
+ */
 export const SearchBar = ({
   query,
   isVibrating,

@@ -10,6 +10,18 @@ import { Button } from './Button'
 
 type GalleryCardProps = Omit<SimpleAnime, 'coverImage'>
 
+/**
+ * A card component for an anime, with a poster image, title, and genres.
+ * The component is a link to the anime's information page.
+ *
+ * @param {Object} props - The properties object.
+ * @prop {number} id - The ID of the anime.
+ * @prop {Object} title - The title object with an english and a native title.
+ * @prop {string} bannerImage - The URL of the banner image of the anime.
+ * @prop {string[]} genres - The genres of the anime.
+ *
+ * @returns {JSX.Element} A JSX element representing the card component.
+ */
 export const GalleryCard = ({
   id,
   title,

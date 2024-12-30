@@ -7,6 +7,14 @@ import { signIn, signOut, useSession } from 'next-auth/react'
 import { Button } from '@/components/molecules/ui/Button'
 import { useOnlineStatus } from '@/hooks/useIsOnline'
 
+/**
+ * Avatar component that displays either a log in button or a profile image
+ * with a status indicator if the user is logged in.
+ *
+ * @returns A button element if the user is not logged in, or a `div` element
+ * with a log out button and a profile image with a status indicator if the
+ * user is logged in.
+ */
 export const Avatar = () => {
   const { data: session } = useSession()
   const isOnline = useOnlineStatus()
