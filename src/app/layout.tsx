@@ -43,16 +43,16 @@ export const metadata: Metadata = {
     siteName: 'Sphere',
     images: [
       {
-        url: '',
+        url: 'https://i.ibb.co/sFTgqqP/op.png',
         width: 800,
         height: 600,
-        alt: ``,
+        alt: `Sphere`,
       },
       {
-        url: '',
+        url: 'https://i.ibb.co/sFTgqqP/op.png',
         width: 1800,
         height: 1600,
-        alt: ``,
+        alt: `Sphere`,
       },
     ],
     locale: 'en-US',
