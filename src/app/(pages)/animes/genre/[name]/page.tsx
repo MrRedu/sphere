@@ -2,7 +2,7 @@
 
 import { useParams } from 'next/navigation'
 
-import { GenreGallery } from '#/src/app/components/layout/GenreGallery'
+import { GenreGallery } from '@/components/layout/GenreGallery'
 
 type Params = Promise<{ slug: string[] }>
 

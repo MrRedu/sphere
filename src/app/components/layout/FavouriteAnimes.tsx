@@ -3,15 +3,15 @@ import { gql, useQuery } from '@apollo/client'
 import { useEffect, useState } from 'react'
 
 import Section from '@/components/atoms/Section'
+import { FavouriteAnimesEmptyState } from '@/components/atoms/skeletons/FavouriteAnimesEmptyState'
+import { GallerySkeleton } from '@/components/atoms/skeletons/GallerySkeleton'
 import Gallery from '@/components/organisms/Gallery'
+import { Filters } from '@/components/organisms/ui/Filters'
 import { Pagination } from '@/components/organisms/ui/Pagination'
 import { usePagination } from '@/hooks/usePagination'
 import { useFavouriteAnimes } from '@/stores/animes/favourite-animes.store'
 
 import { SimpleAnime } from '../../types/anime.type'
-import { FavouriteAnimesEmptyState } from '../atoms/skeletons/FavouriteAnimesEmptyState'
-import { GallerySkeleton } from '../atoms/skeletons/GallerySkeleton'
-import { Filters } from '../organisms/ui/Filters'
 
 const GET_MY_FAVOURITE_ANIMES = gql`
   query GetMyFavouriteAnimes($ids: [Int], $page: Int, $perPage: Int) {
@@ -75,7 +75,7 @@ export const FavouriteAnimes = () => {
 
   // Efecto para aplicar filtros
   useEffect(() => {
-    let filteredData = [...animeData]
+    let filteredData: SimpleAnime[] = [...animeData]
 
     // Aplicar filtros
     if (filters.mediaGenre2) {
@@ -109,7 +109,10 @@ export const FavouriteAnimes = () => {
       )
     }
 
+    // Actualizar datos filtrados y total de páginas
     setFilteredAnimeData(filteredData)
+
+    // Calcular totalPages basado en filteredAnimeData
     setTotalPages(Math.ceil(filteredData.length / perPage))
 
     // Reset a la primera página si cambian los filtros

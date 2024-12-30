@@ -20,7 +20,7 @@ const geistMono = Geist_Mono({
 export const metadata: Metadata = {
   title: {
     template: '%s | Sphere',
-    default: 'Sphere: Tu Portal al Universo del Anime',
+    default: 'Sphere | Your gateway to the anime universe',
   },
   authors: [
     { name: '(Mr Redu) - Eduardo R.', url: 'https://github.com/MrRedu' },
