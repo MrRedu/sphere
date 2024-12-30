@@ -9,6 +9,14 @@ import { Swiper } from '@/components/organisms/Swiper'
 
 import { SimpleAnime } from '../../types/anime.type'
 
+/**
+ * The HeroSection component is a section that displays a banner image of an anime,
+ * information about the anime, and a swiper that shows the most watched animes.
+ *
+ * @param {{ animes?: SimpleAnime[] }} props - The props for the component.
+ * @param {SimpleAnime[]} [props.animes=[]] - An array of animes to display in the swiper.
+ * @returns {JSX.Element} The HeroSection component.
+ */
 export const HeroSection = ({ animes = [] }: { animes?: SimpleAnime[] }) => {
   const [currentIndex, setCurrentIndex] = useState(0)
   const defaultAnime = {

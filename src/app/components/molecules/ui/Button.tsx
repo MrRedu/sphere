@@ -9,6 +9,18 @@ interface ButtonProps extends React.ButtonHTMLAttributes<HTMLButtonElement> {
   href?: string
 }
 
+/**
+ * A versatile button component that can render as either a button or a link.
+ *
+ * @param {ButtonProps} props - The component props.
+ * @param {React.ReactNode} props.children - The content to display inside the button.
+ * @param {string} [props.className] - Additional CSS classes to apply to the button.
+ * @param {'submit' | 'reset' | 'button'} [props.type='button'] - The button type attribute.
+ * @param {string} [props.href] - If provided, the button will render as a link pointing to this URL.
+ * @param {React.ButtonHTMLAttributes<HTMLButtonElement>} rest - Additional attributes to apply to the button element.
+ *
+ * @returns {JSX.Element} A JSX element representing a styled button or link.
+ */
 export const Button: React.FC<ButtonProps> = ({
   children,
   className,

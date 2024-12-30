@@ -60,6 +60,20 @@ const ANIMES = gql`
     }
   }
 `
+
+/**
+ * A component that displays a gallery of anime, with support for filtering,
+ * pagination, and lazy loading. It fetches the anime data using GraphQL queries
+ * and uses the Apollo Client for data management.
+ *
+ * Filters can be applied based on genre, status, and sort order. The component
+ * also includes a search feature and handles loading and error states with
+ * appropriate skeleton components and error messages.
+ *
+ * @returns {JSX.Element} The rendered gallery component with filters, anime
+ * cards, and pagination controls.
+ */
+
 export const SimpleGallery = () => {
   const perPage = 12
   const [totalPages, setTotalPages] = useState(0)

@@ -47,6 +47,14 @@ const GET_ANIMES_BY_GENRE = gql`
   }
 `
 
+/**
+ * GenreGallery is a component that displays a list of anime
+ * corresponding to the given genre. It fetches the list of anime
+ * from the server and displays a pagination component to navigate
+ * through the list.
+ * @param {{ genre: string }} props
+ * @returns {JSX.Element}
+ */
 export const GenreGallery = ({ genre }: { genre: string }) => {
   const perPage = 9
   const [totalPages, setTotalPages] = useState<number>(0)

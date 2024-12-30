@@ -67,6 +67,17 @@ interface DropDownProps {
   items: DropDownItem[]
 }
 
+/**
+ * A dropdown component that displays a list of items as options.
+ *
+ * @param {{ title: string, value: string, onChange: (event: React.ChangeEvent<HTMLSelectElement>) => void, items: DropDownItem[] }} props
+ * @prop {string} title - The title of the dropdown.
+ * @prop {string} value - The value of the dropdown.
+ * @prop {(event: React.ChangeEvent<HTMLSelectElement>) => void} onChange - The callback when the dropdown value changes.
+ * @prop {DropDownItem[]} items - The items to display in the dropdown.
+ *
+ * @returns {JSX.Element} A JSX element representing the dropdown component.
+ */
 const DropDown = ({ title, value, onChange, items }: DropDownProps) => {
   return (
     <div className="w-full max-w-[200px]">
@@ -100,6 +111,17 @@ const DropDown = ({ title, value, onChange, items }: DropDownProps) => {
   )
 }
 
+/**
+ * A component that renders a search bar, genre dropdown, status dropdown,
+ * and score dropdown. It also handles the search query change and
+ * submits the form when the search query changes.
+ *
+ * @param {{ filters: { mediaGenre2: string, status: string, sort: string, search: string }, onFilterChange: (filters: { mediaGenre2: string, status: string, sort: string, search: string }) => void }} props
+ * @prop {{ mediaGenre2: string, status: string, sort: string, search: string }} filters - The current filter values.
+ * @prop {(filters: { mediaGenre2: string, status: string, sort: string, search: string }) => void} onFilterChange - The callback when the filter values change.
+ *
+ * @returns {JSX.Element} A JSX element representing the filters component.
+ */
 export const Filters = ({ filters, onFilterChange }: FiltersProps) => {
   const [selectedGenre, setSelectedGenre] = useState(filters.mediaGenre2)
   const [selectedStatus, setSelectedStatus] = useState(filters.status)

@@ -1,21 +1,20 @@
 import Image from 'next/image'
 
-/**
- * Renders a full-screen banner image with gradient overlays.
- *
- * @param {Object} props - The component props.
- * @param {string} banner - The URL of the banner image. Defaults to a placeholder image.
- * @param {string} title - The title used as alt text for the image. Defaults to 'Unknown'.
- *
- * This component uses multiple CSS gradients to create an overlay effect on the image.
- * It ensures that the image covers the full viewport height and applies a saturation effect.
- */
-
 type BannerImageProps = {
   banner?: string
   title?: string
 }
 
+/**
+ * A component that displays a background image with a gradient overlay.
+ * Useful for a hero section.
+ *
+ * @param {Object} props - The props object.
+ * @param {string} [props.banner='/placeholder_1536x864.jpg'] - The URL of the background image.
+ * @param {string} [props.title='Unknown'] - The title of the anime.
+ *
+ * @returns {JSX.Element} A JSX element representing the banner component.
+ */
 export const BannerImage = ({
   banner = '/placeholder_1536x864.jpg',
   title = 'Unknown',

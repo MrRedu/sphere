@@ -27,6 +27,21 @@ import { capitalize, formatDate } from '@/lib/utils'
 
 import { Anime as AnimeInterface } from '../../types/anime.type'
 
+/**
+ * A component that displays detailed information about an anime, including
+ * its episodes, duration, country of origin, status, format, type, start
+ * and end dates, genres, and description. It also includes buttons for
+ * liking the anime and viewing its trailer.
+ *
+ * Props:
+ * - anime: An object containing anime details conforming to the AnimeInterface.
+ *
+ * Information is displayed using various components such as AnimeStats
+ * for episodes, format, and date details, BannerImage for the banner,
+ * TextLoop for displaying titles, Chip for genres, Rating for average score,
+ * and RichText for the description.
+ */
+
 export const Anime = ({ anime }: { anime: AnimeInterface }) => {
   const episodesInformation = [
     {

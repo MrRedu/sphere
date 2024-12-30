@@ -1,45 +1,5 @@
 import { Fragment } from 'react'
 
-/**
- * A component that displays a list of anime stats. The stats are given as a list
- * of objects, each with an id, field, data, and icon. The id is used as the key
- * for the fragment, the field is the name of the stat, the data is the value of
- * the stat, and the icon is the icon to display next to the stat. The stats are
- * displayed in a flex container with a gap of 4 between each stat. The last stat
- * is not followed by a separator.
- *
- * @example
- * // Display a list of anime stats
- * <AnimeStats
- *   stats={[
- *     {
- *       id: 1,
- *       field: "Episodes",
- *       data: 24,
- *       icon: <FileVideo />,
- *     },
- *     {
- *       id: 2,
- *       field: "Episode duration",
- *       data: "24 minutes",
- *       icon: <Clock />,
- *     },
- *     {
- *       id: 3,
- *       field: "Origin",
- *       data: (
- *         <ReactCountryFlag
- *           countryCode="JP"
- *           svg
- *           style={{ width: "2em", height: "2em" }}
- *         />
- *       ),
- *       icon: <Globe />,
- *     },
- *   ]}
- * />
- */
-
 interface AnimeStatsProps {
   stats: Stat[]
 }
@@ -51,6 +11,21 @@ type Stat = {
   icon: React.ReactNode
 }
 
+/**
+ * A component to display a list of anime stats. The stats should be an
+ * array of objects with the following properties:
+ *
+ * - `id`: A unique identifier for the stat.
+ * - `field`: The field name of the stat (optional).
+ * - `data`: The data of the stat. Can be a string, a number, or any
+ *   React node.
+ * - `icon`: An icon to be displayed next to the stat.
+ *
+ * The component displays the stats in a horizontal list, with the
+ * icon on the left and the field and data on the right. If the field
+ * is not provided, it is not displayed. A separator is displayed
+ * between each stat.
+ */
 export const AnimeStats = ({ stats }: AnimeStatsProps) => {
   return (
     <div className="flex flex-wrap items-center gap-4">

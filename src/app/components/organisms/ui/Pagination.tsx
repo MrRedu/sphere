@@ -9,6 +9,19 @@ interface PaginationProps {
   paginationRange: (number | string)[]
 }
 
+/**
+ * A pagination component that displays a range of pages and allows the user to navigate between them.
+ *
+ * The component takes the following props:
+ *
+ * - `totalPages`: The total number of pages.
+ * - `currentPage`: The current page number.
+ * - `setCurrentPage`: A function to set the current page number.
+ * - `paginationRange`: An array of numbers or strings that represent the range of pages to display.
+ *
+ * The component renders a range of pages as buttons, with the current page highlighted.
+ * It also renders a "Previous" and "Next" button that allow the user to navigate between pages.
+ */
 export const Pagination = ({
   totalPages,
   currentPage,
