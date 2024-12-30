@@ -12,11 +12,23 @@ const renderStars = (rating: number) => {
 
   for (let index = 0; index < MAX_RATING; index++) {
     if (index < Math.floor(rating)) {
-      stars.push(<Star key={index} className="text-primary" />)
+      stars.push(
+        <li key={index}>
+          <Star key={index} className="text-primary" />
+        </li>
+      )
     } else if (index === Math.floor(rating) && rating % 1 !== 0) {
-      stars.push(<StarHalf key={index} className="text-primary" />)
+      stars.push(
+        <li key={index}>
+          <StarHalf key={index} className="text-primary" />
+        </li>
+      )
     } else {
-      stars.push(<Star key={index} className="text-zinc-500" />)
+      stars.push(
+        <li key={index}>
+          <Star key={index} className="text-zinc-500" />
+        </li>
+      )
     }
   }
 

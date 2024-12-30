@@ -41,8 +41,8 @@ export const GalleryCard = ({
           src={bannerImage || '/placeholder_300x450.jpg'}
           alt={`Poster ${title.english || title.native || 'Unknown'}`}
           className="absolute inset-0 -z-10 h-full w-full object-cover"
-          width={1280}
-          height={763}
+          width={800}
+          height={600}
         />
         <p className="text-sm">{genres.join(', ')}</p>
         <h2 className="text-lg font-bold">

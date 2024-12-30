@@ -21,12 +21,13 @@ export const Avatar = () => {
   return (
     <div className="flex items-center gap-2">
       <Button
+        title="Log Out"
         onClick={() => signOut({ callbackUrl: '/' })}
         className="h-10 w-10 p-2"
       >
         <LogOut />
       </Button>
-      <Link href="/profile" className="relative">
+      <Link href="/profile" className="relative" title="Profile">
         <Image
           src={session.user?.image as string}
           alt={session.user?.name as string}
