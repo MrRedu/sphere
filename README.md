@@ -9,10 +9,10 @@
    </p>
 </p>
 
-## Tabla de Contenidos
-
 <details open>
-  <summary>Tabla de contenidos</summary>
+  <summary>
+  <h2>Tabla de contenidos</h2>
+  </summary>
   <ul>
     <li><a href="#-descripción">Descripción</a></li>
     <li><a href="#-características">Características</a></li>

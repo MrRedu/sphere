@@ -10,8 +10,8 @@ export const FavouriteAnimesEmptyState = () => {
         <p className="mb-4 text-2xl font-semibold">Start adding some!</p>
       </div>
       <Image
-        src="/box.svg"
-        alt="Box"
+        src="/empty.svg"
+        alt="Empty favourite animes"
         width={100}
         height={100}
         className="w-full max-w-[300px] object-cover"
