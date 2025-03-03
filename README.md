@@ -79,7 +79,7 @@ Además, podrás guardar tus animes preferidos en una lista de favoritos, lo que
 
 ![Next.js][Next.js]![GraphQL][GraphQL]![Zustand][Zustand] <br>
 ![React.js][React.js]![TypeScript][TypeScript]![TailwindCSS][TailwindCSS]<br>
-![Framer][Framer] <br>
+![Motion][Motion] <br>
 ![ESLint][ESLint]![Prettier][Prettier]<br>
 
 ## Instalación
@@ -175,6 +175,6 @@ Sphere está bajo la [Licencia MIT](LICENSE).
 [TailwindCSS]: https://img.shields.io/badge/TailwindCSS-06b6d4?style=for-the-badge&logo=tailwind-css&logoColor=white
 [ESLint]: https://img.shields.io/badge/eslint-4b32c3?style=for-the-badge&logo=eslint&logoColor=white
 [Prettier]: https://img.shields.io/badge/prettier-f7b93e?style=for-the-badge&logo=prettier&logoColor=white
-[Framer]: https://img.shields.io/badge/framer-0055FF?style=for-the-badge&logo=framer&logoColor=white
+[Motion]: https://img.shields.io/badge/motion-F6EC2E?style=for-the-badge&logo=motion&logoColor=white
 [GraphQL]: https://img.shields.io/badge/GraphQl-E10098?style=for-the-badge&logo=graphql&logoColor=white
 [TypeScript]: https://img.shields.io/badge/TypeScript-3178C6?style=for-the-badge&logo=typescript&logoColor=white
